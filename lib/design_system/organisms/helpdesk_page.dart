@@ -1,5 +1,5 @@
 import 'package:helpdesk/design_system/design_system.dart';
-import 'package:helpdesk/design_system/molecules/menu_item.dart';
+import 'package:helpdesk/design_system/molecules/context_menu_item.dart';
 import 'package:helpdesk/design_system/organisms/loading_view.dart';
 import 'package:helpdesk/features/application/bloc/application_bloc.dart';
 import 'package:helpdesk/features/authentication/widgets/user_connection_status.dart';
@@ -22,7 +22,7 @@ class HelpdeskPage extends StatelessWidget {
   final Widget? appBarTitle;
   final Widget? navigation;
   final bool automaticallyShowBackButton;
-  final List<MenuItem>? actionMenuItems;
+  final List<ContextMenuItem>? actionMenuItems;
   final MenuItemVoidCallback? actionMenuCallback;
 
   HelpdeskPage.loading({
@@ -59,27 +59,25 @@ class HelpdeskPage extends StatelessWidget {
     bool isLargeScreen = false;
 
     return BlocBuilder<ApplicationBloc, ApplicationState>(
-      builder: (context, appState) {
+      builder: (context, applicationState) {
         return Scaffold(
           backgroundColor: Theme.of(context).colorScheme.background,
           appBar: AppBar(
             elevation: 4.0,
-            leading: automaticallyShowBackButton
-                ? IconButton(
-                    icon: const Icon(Icons.navigate_before),
-                    onPressed: () {
-                      if (GoRouter.of(context).canPop()) {
-                        GoRouter.of(context).pop();
-                      } else {
-                        GoRouter.of(context).go('/');
-                      }
-                    },
-                  )
-                : Container(),
-            leadingWidth: automaticallyShowBackButton ? 40.0 : 0.0,
+            leading: IconButton(
+              icon: applicationState.isDrawerVisible
+                  ? const Icon(Icons.menu_open)
+                  : const Icon(Icons.menu),
+              onPressed: () {
+                BlocProvider.of<ApplicationBloc>(context).add(
+                    ApplicationEvent.drawerVisibilityChanged(
+                        !applicationState.isDrawerVisible));
+              },
+            ),
+            leadingWidth: 50.0,
             title: appBarTitle,
             centerTitle: config.centerHelpdeskName,
-            automaticallyImplyLeading: false,
+            // automaticallyImplyLeading: false,
             actions: [
               if (actionMenuItems != null && actionMenuItems!.isNotEmpty)
                 Padding(
@@ -87,7 +85,7 @@ class HelpdeskPage extends StatelessWidget {
                   child: PopupMenuButton<String>(
                       onSelected: actionMenuCallback,
                       itemBuilder: (BuildContext context) {
-                        return actionMenuItems!.map((MenuItem item) {
+                        return actionMenuItems!.map((ContextMenuItem item) {
                           return PopupMenuItem<String>(
                             value: item.label,
                             child: item,
@@ -99,6 +97,35 @@ class HelpdeskPage extends StatelessWidget {
               const UserConnectionStatusView(),
             ],
           ),
+          // drawer: Drawer(
+          //   elevation: 1.0,
+          //   child: ListView(
+          //     // Important: Remove any padding from the ListView.
+          //     padding: EdgeInsets.zero,
+          //     children: [
+          //       const DrawerHeader(
+          //         decoration: BoxDecoration(
+          //           color: Colors.blue,
+          //         ),
+          //         child: Text('Drawer Header'),
+          //       ),
+          //       ListTile(
+          //         title: const Text('Item 1'),
+          //         onTap: () {
+          //           // Update the state of the app.
+          //           // ...
+          //         },
+          //       ),
+          //       ListTile(
+          //         title: const Text('Item 2'),
+          //         onTap: () {
+          //           // Update the state of the app.
+          //           // ...
+          //         },
+          //       ),
+          //     ],
+          //   ),
+          // ),
           body: OrientationBuilder(builder: (context, orientation) {
             if (MediaQuery.of(context).size.width > 600) {
               isLargeScreen = true;
@@ -107,86 +134,35 @@ class HelpdeskPage extends StatelessWidget {
             }
             return Container(
               color: Theme.of(context).colorScheme.surface,
-              child: Stack(
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      appState.isDrawerVisible
-                          ? Expanded(
-                              child: Drawer(
-                                  elevation: 1.0,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Expanded(
-                                          child: navigation ?? Container()),
-                                      const Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 20.0,
-                                          vertical: 10.0,
-                                        ),
-                                        child: AppVersionView(),
-                                      )
-                                    ],
-                                  )))
-                          : Container(),
-                      isLargeScreen
-                          ? Flexible(
-                              flex: 5,
-                              child: child,
-                            )
-                          : Container(),
-                    ],
-                  ),
-                  IconButton(
-                    icon: appState.isDrawerVisible
-                        ? const Icon(Icons.menu_open)
-                        : const Icon(Icons.menu),
-                    onPressed: () {
-                      BlocProvider.of<ApplicationBloc>(context).add(
-                          ApplicationEvent.drawerVisibilityChanged(
-                              !appState.isDrawerVisible));
-                    },
-                  ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  applicationState.isDrawerVisible
+                      ? Drawer(
+                          elevation: 1.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(child: navigation ?? Container()),
+                              const Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 20.0,
+                                  vertical: 10.0,
+                                ),
+                                child: AppVersionView(),
+                              )
+                            ],
+                          ))
+                      : Container(),
+                  isLargeScreen
+                      ? Flexible(
+                          flex: 5,
+                          child: child,
+                        )
+                      : Container(),
                 ],
               ),
-
-              // isDrawerVisible
-              //     ? Expanded(
-              //         child: Drawer(
-              //           elevation: 1,
-              //           child: Align(
-              //             alignment: Alignment.bottomLeft,
-              //             child: Padding(
-              //               padding: const EdgeInsets.only(
-              //                 left: 20.0,
-              //                 bottom: 20.0,
-              //               ),
-              //               child: Column(
-              //                 crossAxisAlignment: CrossAxisAlignment.start,
-              //                 mainAxisSize: MainAxisSize.min,
-              //                 children: const [
-              //                   UserConnectionStatusView(),
-              //                   Padding(
-              //                     padding: EdgeInsets.only(
-              //                       top: 10.0,
-              //                     ),
-              //                     child: AppVersionView(),
-              //                   ),
-              //                 ],
-              //               ),
-              //             ),
-              //           ),
-              //         ),
-              //       )
-              //     : Container(),
-              // Flexible(
-              //   flex: 5,
-              //   child: child,
-              // ),
             );
           }),
         );

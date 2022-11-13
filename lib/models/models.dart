@@ -1,4 +1,5 @@
 export 'api_doc.dart';
+export 'drawer_item.dart';
 export 'failure.dart';
 export 'failures.dart';
 export 'functions.dart';

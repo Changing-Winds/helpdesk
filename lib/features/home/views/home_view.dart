@@ -1,7 +1,9 @@
+import 'package:helpdesk/design_system/molecules/drawer_navigation_item.dart';
 import 'package:helpdesk/design_system/organisms/error_view.dart';
 import 'package:helpdesk/design_system/organisms/helpdesk_page.dart';
 import 'package:helpdesk/features/application/bloc/application_bloc.dart';
 import 'package:helpdesk/features/home/bloc/home_bloc.dart';
+import 'package:helpdesk/models/models.dart';
 import 'package:helpdesk/utils/config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +22,10 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     Config config = BlocProvider.of<ApplicationBloc>(context).config;
+
+    List<DrawerItem> drawerItems = [
+      DrawerItem('Your Opened Tickets', Icons.topic)
+    ];
 
     return BlocBuilder<ApplicationBloc, ApplicationState>(
       builder: (context, applicationState) {
@@ -45,6 +51,19 @@ class _HomeViewState extends State<HomeView> {
                 ],
               ),
               automaticallyShowBackButton: false,
+              navigation: ListView.builder(
+                scrollDirection: Axis.vertical,
+                padding: const EdgeInsets.only(
+                  left: 15.0,
+                  right: 15,
+                  bottom: 100.0,
+                ),
+                itemCount: drawerItems.length,
+                itemBuilder: (BuildContext context, int index) => Padding(
+                  padding: const EdgeInsets.only(top: 8.0),
+                  child: DrawerNavigationItem(item: drawerItems[index]),
+                ),
+              ),
               child: const ErrorView(
                 icon: Icons.bedtime_outlined,
                 errorTitle: 'Nothing to show yet',

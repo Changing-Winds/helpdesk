@@ -101,7 +101,7 @@ class HelpdeskApp extends StatelessWidget {
                 );
               default:
                 return MaterialApp(
-                  title: 'Loading...',
+                  title: config.helpdeskName,
                   theme: lightTheme(),
                   darkTheme: darkTheme(),
                   home: const Scaffold(
