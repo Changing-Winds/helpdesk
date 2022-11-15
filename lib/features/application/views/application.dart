@@ -1,5 +1,6 @@
 import 'package:helpdesk/design_system/design_system.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:helpdesk/features/application/bloc/application_bloc.dart';
 import 'package:helpdesk/features/application/views/unknown_screen.dart';
 import 'package:helpdesk/features/authentication/authentication.dart';
@@ -16,6 +17,7 @@ class HelpdeskApp extends StatelessWidget {
     required this.config,
   });
   final Config config;
+
   final GoRouter _router = GoRouter(
     initialLocation: '/',
     routes: <GoRoute>[
@@ -51,9 +53,21 @@ class HelpdeskApp extends StatelessWidget {
     ],
     errorBuilder: (context, state) => const UnknownScreen(),
   );
-
   @override
   Widget build(BuildContext context) {
+    List<LocalizationsDelegate> localizationDelegates = const [
+      L10nString.delegate,
+      GlobalMaterialLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate,
+      GlobalCupertinoLocalizations.delegate,
+    ];
+
+    List<Locale> supportedLocales = const [
+      Locale('en', 'US'),
+      Locale('en', 'GB'),
+      Locale('fr', 'FR'),
+    ];
+
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider<ConnectivityRepository>(
@@ -77,11 +91,14 @@ class HelpdeskApp extends StatelessWidget {
 
             switch (state.status) {
               case ApplicationStatus.ready:
-                return MaterialApp.router(
-                  routerConfig: _router,
+                return MaterialApp(
+                  // routerConfig: _router,
                   title: config.helpdeskName,
                   theme: lightTheme(),
                   darkTheme: darkTheme(),
+                  localizationsDelegates: localizationDelegates,
+                  supportedLocales: supportedLocales,
+                  home: const HomeScreen(),
                 );
 
               case ApplicationStatus.failed:
@@ -89,6 +106,8 @@ class HelpdeskApp extends StatelessWidget {
                   title: 'Error',
                   theme: lightTheme(),
                   darkTheme: darkTheme(),
+                  localizationsDelegates: localizationDelegates,
+                  supportedLocales: supportedLocales,
                   home: Scaffold(
                     body: Center(
                       child: ErrorView(
@@ -104,6 +123,8 @@ class HelpdeskApp extends StatelessWidget {
                   title: config.helpdeskName,
                   theme: lightTheme(),
                   darkTheme: darkTheme(),
+                  localizationsDelegates: localizationDelegates,
+                  supportedLocales: supportedLocales,
                   home: const Scaffold(
                     body: Center(
                       child: Loading(),

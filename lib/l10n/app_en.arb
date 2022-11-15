@@ -1,0 +1,14 @@
+{
+  "allOpenedTickets": "All Opened Tickets",
+  "@allOpenedTickets": {
+    "description": "Name of the opened tickets screen"
+  },
+  "dashboard": "Dashboard",
+  "@dashboard": {
+    "description": "Name of the default home screen of the app"
+  },
+  "yourOpenedTickets": "Your Opened Tickets",
+  "@yourOpenedTickets": {
+    "description": "Name of the users' opened ticket screen"
+  }
+}
