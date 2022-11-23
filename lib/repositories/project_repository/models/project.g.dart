@@ -25,7 +25,7 @@ Map<String, dynamic> _$$_ProjectToJson(_$_Project instance) =>
       'abstract': instance.abstract,
       'createdAt': instance.createdAt.toIso8601String(),
       'updatedAt': instance.updatedAt?.toIso8601String(),
-      'type': _$ProjectTypeEnumMap[instance.type],
+      'type': _$ProjectTypeEnumMap[instance.type]!,
     };
 
 const _$ProjectTypeEnumMap = {

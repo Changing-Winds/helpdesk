@@ -5,19 +5,26 @@ import 'package:helpdesk/features/application/bloc/application_bloc.dart';
 import 'package:helpdesk/features/application/views/unknown_screen.dart';
 import 'package:helpdesk/features/authentication/authentication.dart';
 import 'package:helpdesk/features/home/views/home_screen.dart';
+import 'package:helpdesk/firebase_options.dart';
 import 'package:helpdesk/repositories/connectivity_repository/connectivity_repository.dart';
 import 'package:helpdesk/utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-class HelpdeskApp extends StatelessWidget {
-  HelpdeskApp({
+class HelpdeskApp extends StatefulWidget {
+  const HelpdeskApp({
     super.key,
     required this.config,
   });
   final Config config;
 
+  @override
+  State<HelpdeskApp> createState() => _HelpdeskAppState();
+}
+
+class _HelpdeskAppState extends State<HelpdeskApp> {
   final GoRouter _router = GoRouter(
     initialLocation: '/',
     routes: <GoRoute>[
@@ -53,6 +60,15 @@ class HelpdeskApp extends StatelessWidget {
     ],
     errorBuilder: (context, state) => const UnknownScreen(),
   );
+
+  @override
+  void initState() async {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     List<LocalizationsDelegate> localizationDelegates = const [
@@ -78,10 +94,11 @@ class HelpdeskApp extends StatelessWidget {
           BlocProvider<AuthenticationBloc>(
               lazy: false,
               create: (BuildContext context) =>
-                  AuthenticationBloc(config)..add(AuthenticationInited())),
+                  AuthenticationBloc(widget.config)
+                    ..add(AuthenticationInited())),
           BlocProvider<ApplicationBloc>(
-            create: (context) =>
-                ApplicationBloc(config)..add(const ApplicationEvent.started()),
+            create: (context) => ApplicationBloc(widget.config)
+              ..add(const ApplicationEvent.started()),
             lazy: false,
           ),
         ],

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "824508506748",
+    "project_id": "flatsy-help-desk",
+    "storage_bucket": "flatsy-help-desk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:824508506748:android:87a6c50ea2f638206f9ff9",
+        "android_client_info": {
+          "package_name": "com.example.helpdesk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "824508506748-2kderb22n34ssp13cirjcksb460pjab3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUtdi_rwfz8bYeg7HRkPl2KrRmFxupSkE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "824508506748-2kderb22n34ssp13cirjcksb460pjab3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

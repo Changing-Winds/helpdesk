@@ -1,9 +1,11 @@
 import 'dart:async';
 
-import 'package:core/core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:datasources/datasources.dart';
-import 'package:firestore_datasource/firestore_datasource.dart';
+import 'package:helpdesk/models/failure.dart';
+import 'package:helpdesk/repositories/datasources/errors/errors.dart';
+import 'package:helpdesk/repositories/datasources/remote_datasource.dart';
+import 'package:helpdesk/utils/prettier_logger/prettier_logger.dart';
 
 abstract class FirestoreDatasource<T> extends RemoteDatasource<T> {
   FirestoreDatasource(this.collectionName);

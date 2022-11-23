@@ -10,14 +10,12 @@ _$_ProjectState _$$_ProjectStateFromJson(Map<String, dynamic> json) =>
     _$_ProjectState(
       status: $enumDecodeNullable(_$ProjectStatusEnumMap, json['status']) ??
           ProjectStatus.initial,
-      project: json['project'] == null
-          ? null
-          : Project.fromJson(json['project'] as Map<String, dynamic>),
+      project: json['project'],
     );
 
 Map<String, dynamic> _$$_ProjectStateToJson(_$_ProjectState instance) =>
     <String, dynamic>{
-      'status': _$ProjectStatusEnumMap[instance.status],
+      'status': _$ProjectStatusEnumMap[instance.status]!,
       'project': instance.project,
     };
 

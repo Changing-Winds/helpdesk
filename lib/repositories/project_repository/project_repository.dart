@@ -1,5 +1,6 @@
-import 'package:firestore_datasource/firestore_datasource.dart';
-import 'package:scriptia/repositories/project/models/project.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:helpdesk/repositories/firestore_datasource/firestore_datasource_base.dart';
+import 'package:helpdesk/repositories/project_repository/models/project.dart';
 
 class ProjectRepository extends FirestoreDatasource<Project> {
   ProjectRepository() : super('projects');

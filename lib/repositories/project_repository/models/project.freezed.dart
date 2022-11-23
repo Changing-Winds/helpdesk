@@ -37,7 +37,8 @@ mixin _$Project {
 /// @nodoc
 abstract class $ProjectCopyWith<$Res> {
   factory $ProjectCopyWith(Project value, $Res Function(Project) then) =
-      _$ProjectCopyWithImpl<$Res>;
+      _$ProjectCopyWithImpl<$Res, Project>;
+  @useResult
   $Res call(
       {@JsonKey(ignore: true) String? id,
       String authorID,
@@ -49,53 +50,56 @@ abstract class $ProjectCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProjectCopyWithImpl<$Res> implements $ProjectCopyWith<$Res> {
+class _$ProjectCopyWithImpl<$Res, $Val extends Project>
+    implements $ProjectCopyWith<$Res> {
   _$ProjectCopyWithImpl(this._value, this._then);
 
-  final Project _value;
   // ignore: unused_field
-  final $Res Function(Project) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? authorID = freezed,
-    Object? title = freezed,
+    Object? authorID = null,
+    Object? title = null,
     Object? abstract = freezed,
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? updatedAt = freezed,
-    Object? type = freezed,
+    Object? type = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      authorID: authorID == freezed
+      authorID: null == authorID
           ? _value.authorID
           : authorID // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      abstract: abstract == freezed
+      abstract: freezed == abstract
           ? _value.abstract
           : abstract // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: createdAt == freezed
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: updatedAt == freezed
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ProjectType,
-    ));
+    ) as $Val);
   }
 }
 
@@ -105,6 +109,7 @@ abstract class _$$_ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
           _$_Project value, $Res Function(_$_Project) then) =
       __$$_ProjectCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(ignore: true) String? id,
       String authorID,
@@ -116,50 +121,49 @@ abstract class _$$_ProjectCopyWith<$Res> implements $ProjectCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ProjectCopyWithImpl<$Res> extends _$ProjectCopyWithImpl<$Res>
+class __$$_ProjectCopyWithImpl<$Res>
+    extends _$ProjectCopyWithImpl<$Res, _$_Project>
     implements _$$_ProjectCopyWith<$Res> {
   __$$_ProjectCopyWithImpl(_$_Project _value, $Res Function(_$_Project) _then)
-      : super(_value, (v) => _then(v as _$_Project));
+      : super(_value, _then);
 
-  @override
-  _$_Project get _value => super._value as _$_Project;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
-    Object? authorID = freezed,
-    Object? title = freezed,
+    Object? authorID = null,
+    Object? title = null,
     Object? abstract = freezed,
-    Object? createdAt = freezed,
+    Object? createdAt = null,
     Object? updatedAt = freezed,
-    Object? type = freezed,
+    Object? type = null,
   }) {
     return _then(_$_Project(
-      id: id == freezed
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      authorID: authorID == freezed
+      authorID: null == authorID
           ? _value.authorID
           : authorID // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      abstract: abstract == freezed
+      abstract: freezed == abstract
           ? _value.abstract
           : abstract // ignore: cast_nullable_to_non_nullable
               as String?,
-      createdAt: createdAt == freezed
+      createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      updatedAt: updatedAt == freezed
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ProjectType,
@@ -224,35 +228,35 @@ class _$_Project extends _Project with DiagnosticableTreeMixin {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Project &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.authorID, authorID) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.abstract, abstract) &&
-            const DeepCollectionEquality().equals(other.createdAt, createdAt) &&
-            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.authorID, authorID) ||
+                other.authorID == authorID) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.abstract, abstract) ||
+                other.abstract == abstract) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(authorID),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(abstract),
-      const DeepCollectionEquality().hash(createdAt),
-      const DeepCollectionEquality().hash(updatedAt),
-      const DeepCollectionEquality().hash(type));
+      runtimeType, id, authorID, title, abstract, createdAt, updatedAt, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ProjectCopyWith<_$_Project> get copyWith =>
       __$$_ProjectCopyWithImpl<_$_Project>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProjectToJson(this);
+    return _$$_ProjectToJson(
+      this,
+    );
   }
 }
 
@@ -271,19 +275,19 @@ abstract class _Project extends Project implements Entity {
 
   @override
   @JsonKey(ignore: true)
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
   @override
-  String get authorID => throw _privateConstructorUsedError;
+  String get authorID;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  String? get abstract => throw _privateConstructorUsedError;
+  String? get abstract;
   @override
-  DateTime get createdAt => throw _privateConstructorUsedError;
+  DateTime get createdAt;
   @override
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  DateTime? get updatedAt;
   @override
-  ProjectType get type => throw _privateConstructorUsedError;
+  ProjectType get type;
   @override
   @JsonKey(ignore: true)
   _$$_ProjectCopyWith<_$_Project> get copyWith =>

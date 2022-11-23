@@ -1,9 +1,10 @@
 // ignore_for_file: invalid_annotation_target
 
-import 'package:firestore_datasource/firestore_datasource.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
-import 'package:helpdesk/repositories/project/models/project_type.dart';
+import 'package:helpdesk/repositories/firestore_datasource/models/entity.dart';
+import 'package:helpdesk/repositories/project_repository/models/project_type.dart';
 
 part 'project.freezed.dart';
 part 'project.g.dart';

@@ -29,12 +29,12 @@ mixin _$ProjectEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Project? project, String authorID)? fetched,
-    TResult Function(Project project)? edited,
-    TResult Function(Project project)? updated,
-    TResult Function(Project project)? deleted,
-    TResult Function()? editingCancelled,
-    TResult Function(Project project, String title, String abstract)?
+    TResult? Function(Project? project, String authorID)? fetched,
+    TResult? Function(Project project)? edited,
+    TResult? Function(Project project)? updated,
+    TResult? Function(Project project)? deleted,
+    TResult? Function()? editingCancelled,
+    TResult? Function(Project project, String title, String abstract)?
         editingSaved,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,12 +62,12 @@ mixin _$ProjectEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ProjectFetched value)? fetched,
-    TResult Function(_ProjectEdited value)? edited,
-    TResult Function(_ProjectUpdated value)? updated,
-    TResult Function(_ProjectDeleted value)? deleted,
-    TResult Function(_ProjectEditingCancelled value)? editingCancelled,
-    TResult Function(_ProjectEditingSaved value)? editingSaved,
+    TResult? Function(_ProjectFetched value)? fetched,
+    TResult? Function(_ProjectEdited value)? edited,
+    TResult? Function(_ProjectUpdated value)? updated,
+    TResult? Function(_ProjectDeleted value)? deleted,
+    TResult? Function(_ProjectEditingCancelled value)? editingCancelled,
+    TResult? Function(_ProjectEditingSaved value)? editingSaved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -87,16 +87,18 @@ mixin _$ProjectEvent {
 abstract class $ProjectEventCopyWith<$Res> {
   factory $ProjectEventCopyWith(
           ProjectEvent value, $Res Function(ProjectEvent) then) =
-      _$ProjectEventCopyWithImpl<$Res>;
+      _$ProjectEventCopyWithImpl<$Res, ProjectEvent>;
 }
 
 /// @nodoc
-class _$ProjectEventCopyWithImpl<$Res> implements $ProjectEventCopyWith<$Res> {
+class _$ProjectEventCopyWithImpl<$Res, $Val extends ProjectEvent>
+    implements $ProjectEventCopyWith<$Res> {
   _$ProjectEventCopyWithImpl(this._value, this._then);
 
-  final ProjectEvent _value;
   // ignore: unused_field
-  final $Res Function(ProjectEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -104,48 +106,34 @@ abstract class _$$_ProjectFetchedCopyWith<$Res> {
   factory _$$_ProjectFetchedCopyWith(
           _$_ProjectFetched value, $Res Function(_$_ProjectFetched) then) =
       __$$_ProjectFetchedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Project? project, String authorID});
-
-  $ProjectCopyWith<$Res>? get project;
 }
 
 /// @nodoc
 class __$$_ProjectFetchedCopyWithImpl<$Res>
-    extends _$ProjectEventCopyWithImpl<$Res>
+    extends _$ProjectEventCopyWithImpl<$Res, _$_ProjectFetched>
     implements _$$_ProjectFetchedCopyWith<$Res> {
   __$$_ProjectFetchedCopyWithImpl(
       _$_ProjectFetched _value, $Res Function(_$_ProjectFetched) _then)
-      : super(_value, (v) => _then(v as _$_ProjectFetched));
+      : super(_value, _then);
 
-  @override
-  _$_ProjectFetched get _value => super._value as _$_ProjectFetched;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? project = freezed,
-    Object? authorID = freezed,
+    Object? project = null,
+    Object? authorID = null,
   }) {
     return _then(_$_ProjectFetched(
-      project: project == freezed
+      project: null == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project?,
-      authorID: authorID == freezed
+      authorID: null == authorID
           ? _value.authorID
           : authorID // ignore: cast_nullable_to_non_nullable
               as String,
     ));
-  }
-
-  @override
-  $ProjectCopyWith<$Res>? get project {
-    if (_value.project == null) {
-      return null;
-    }
-
-    return $ProjectCopyWith<$Res>(_value.project!, (value) {
-      return _then(_value.copyWith(project: value));
-    });
   }
 }
 
@@ -170,17 +158,17 @@ class _$_ProjectFetched implements _ProjectFetched {
         (other.runtimeType == runtimeType &&
             other is _$_ProjectFetched &&
             const DeepCollectionEquality().equals(other.project, project) &&
-            const DeepCollectionEquality().equals(other.authorID, authorID));
+            (identical(other.authorID, authorID) ||
+                other.authorID == authorID));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(project),
-      const DeepCollectionEquality().hash(authorID));
+      runtimeType, const DeepCollectionEquality().hash(project), authorID);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ProjectFetchedCopyWith<_$_ProjectFetched> get copyWith =>
       __$$_ProjectFetchedCopyWithImpl<_$_ProjectFetched>(this, _$identity);
 
@@ -201,12 +189,12 @@ class _$_ProjectFetched implements _ProjectFetched {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Project? project, String authorID)? fetched,
-    TResult Function(Project project)? edited,
-    TResult Function(Project project)? updated,
-    TResult Function(Project project)? deleted,
-    TResult Function()? editingCancelled,
-    TResult Function(Project project, String title, String abstract)?
+    TResult? Function(Project? project, String authorID)? fetched,
+    TResult? Function(Project project)? edited,
+    TResult? Function(Project project)? updated,
+    TResult? Function(Project project)? deleted,
+    TResult? Function()? editingCancelled,
+    TResult? Function(Project project, String title, String abstract)?
         editingSaved,
   }) {
     return fetched?.call(project, authorID);
@@ -246,12 +234,12 @@ class _$_ProjectFetched implements _ProjectFetched {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ProjectFetched value)? fetched,
-    TResult Function(_ProjectEdited value)? edited,
-    TResult Function(_ProjectUpdated value)? updated,
-    TResult Function(_ProjectDeleted value)? deleted,
-    TResult Function(_ProjectEditingCancelled value)? editingCancelled,
-    TResult Function(_ProjectEditingSaved value)? editingSaved,
+    TResult? Function(_ProjectFetched value)? fetched,
+    TResult? Function(_ProjectEdited value)? edited,
+    TResult? Function(_ProjectUpdated value)? updated,
+    TResult? Function(_ProjectDeleted value)? deleted,
+    TResult? Function(_ProjectEditingCancelled value)? editingCancelled,
+    TResult? Function(_ProjectEditingSaved value)? editingSaved,
   }) {
     return fetched?.call(this);
   }
@@ -279,8 +267,8 @@ abstract class _ProjectFetched implements ProjectEvent {
       {required final Project? project,
       required final String authorID}) = _$_ProjectFetched;
 
-  Project? get project => throw _privateConstructorUsedError;
-  String get authorID => throw _privateConstructorUsedError;
+  Project? get project;
+  String get authorID;
   @JsonKey(ignore: true)
   _$$_ProjectFetchedCopyWith<_$_ProjectFetched> get copyWith =>
       throw _privateConstructorUsedError;
@@ -291,39 +279,29 @@ abstract class _$$_ProjectEditedCopyWith<$Res> {
   factory _$$_ProjectEditedCopyWith(
           _$_ProjectEdited value, $Res Function(_$_ProjectEdited) then) =
       __$$_ProjectEditedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Project project});
-
-  $ProjectCopyWith<$Res> get project;
 }
 
 /// @nodoc
 class __$$_ProjectEditedCopyWithImpl<$Res>
-    extends _$ProjectEventCopyWithImpl<$Res>
+    extends _$ProjectEventCopyWithImpl<$Res, _$_ProjectEdited>
     implements _$$_ProjectEditedCopyWith<$Res> {
   __$$_ProjectEditedCopyWithImpl(
       _$_ProjectEdited _value, $Res Function(_$_ProjectEdited) _then)
-      : super(_value, (v) => _then(v as _$_ProjectEdited));
+      : super(_value, _then);
 
-  @override
-  _$_ProjectEdited get _value => super._value as _$_ProjectEdited;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? project = freezed,
+    Object? project = null,
   }) {
     return _then(_$_ProjectEdited(
-      project == freezed
+      null == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project,
     ));
-  }
-
-  @override
-  $ProjectCopyWith<$Res> get project {
-    return $ProjectCopyWith<$Res>(_value.project, (value) {
-      return _then(_value.copyWith(project: value));
-    });
   }
 }
 
@@ -354,6 +332,7 @@ class _$_ProjectEdited implements _ProjectEdited {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ProjectEditedCopyWith<_$_ProjectEdited> get copyWith =>
       __$$_ProjectEditedCopyWithImpl<_$_ProjectEdited>(this, _$identity);
 
@@ -374,12 +353,12 @@ class _$_ProjectEdited implements _ProjectEdited {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Project? project, String authorID)? fetched,
-    TResult Function(Project project)? edited,
-    TResult Function(Project project)? updated,
-    TResult Function(Project project)? deleted,
-    TResult Function()? editingCancelled,
-    TResult Function(Project project, String title, String abstract)?
+    TResult? Function(Project? project, String authorID)? fetched,
+    TResult? Function(Project project)? edited,
+    TResult? Function(Project project)? updated,
+    TResult? Function(Project project)? deleted,
+    TResult? Function()? editingCancelled,
+    TResult? Function(Project project, String title, String abstract)?
         editingSaved,
   }) {
     return edited?.call(project);
@@ -419,12 +398,12 @@ class _$_ProjectEdited implements _ProjectEdited {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ProjectFetched value)? fetched,
-    TResult Function(_ProjectEdited value)? edited,
-    TResult Function(_ProjectUpdated value)? updated,
-    TResult Function(_ProjectDeleted value)? deleted,
-    TResult Function(_ProjectEditingCancelled value)? editingCancelled,
-    TResult Function(_ProjectEditingSaved value)? editingSaved,
+    TResult? Function(_ProjectFetched value)? fetched,
+    TResult? Function(_ProjectEdited value)? edited,
+    TResult? Function(_ProjectUpdated value)? updated,
+    TResult? Function(_ProjectDeleted value)? deleted,
+    TResult? Function(_ProjectEditingCancelled value)? editingCancelled,
+    TResult? Function(_ProjectEditingSaved value)? editingSaved,
   }) {
     return edited?.call(this);
   }
@@ -450,7 +429,7 @@ class _$_ProjectEdited implements _ProjectEdited {
 abstract class _ProjectEdited implements ProjectEvent {
   const factory _ProjectEdited(final Project project) = _$_ProjectEdited;
 
-  Project get project => throw _privateConstructorUsedError;
+  Project get project;
   @JsonKey(ignore: true)
   _$$_ProjectEditedCopyWith<_$_ProjectEdited> get copyWith =>
       throw _privateConstructorUsedError;
@@ -461,39 +440,29 @@ abstract class _$$_ProjectUpdatedCopyWith<$Res> {
   factory _$$_ProjectUpdatedCopyWith(
           _$_ProjectUpdated value, $Res Function(_$_ProjectUpdated) then) =
       __$$_ProjectUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Project project});
-
-  $ProjectCopyWith<$Res> get project;
 }
 
 /// @nodoc
 class __$$_ProjectUpdatedCopyWithImpl<$Res>
-    extends _$ProjectEventCopyWithImpl<$Res>
+    extends _$ProjectEventCopyWithImpl<$Res, _$_ProjectUpdated>
     implements _$$_ProjectUpdatedCopyWith<$Res> {
   __$$_ProjectUpdatedCopyWithImpl(
       _$_ProjectUpdated _value, $Res Function(_$_ProjectUpdated) _then)
-      : super(_value, (v) => _then(v as _$_ProjectUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_ProjectUpdated get _value => super._value as _$_ProjectUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? project = freezed,
+    Object? project = null,
   }) {
     return _then(_$_ProjectUpdated(
-      project == freezed
+      null == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project,
     ));
-  }
-
-  @override
-  $ProjectCopyWith<$Res> get project {
-    return $ProjectCopyWith<$Res>(_value.project, (value) {
-      return _then(_value.copyWith(project: value));
-    });
   }
 }
 
@@ -524,6 +493,7 @@ class _$_ProjectUpdated implements _ProjectUpdated {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ProjectUpdatedCopyWith<_$_ProjectUpdated> get copyWith =>
       __$$_ProjectUpdatedCopyWithImpl<_$_ProjectUpdated>(this, _$identity);
 
@@ -544,12 +514,12 @@ class _$_ProjectUpdated implements _ProjectUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Project? project, String authorID)? fetched,
-    TResult Function(Project project)? edited,
-    TResult Function(Project project)? updated,
-    TResult Function(Project project)? deleted,
-    TResult Function()? editingCancelled,
-    TResult Function(Project project, String title, String abstract)?
+    TResult? Function(Project? project, String authorID)? fetched,
+    TResult? Function(Project project)? edited,
+    TResult? Function(Project project)? updated,
+    TResult? Function(Project project)? deleted,
+    TResult? Function()? editingCancelled,
+    TResult? Function(Project project, String title, String abstract)?
         editingSaved,
   }) {
     return updated?.call(project);
@@ -589,12 +559,12 @@ class _$_ProjectUpdated implements _ProjectUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ProjectFetched value)? fetched,
-    TResult Function(_ProjectEdited value)? edited,
-    TResult Function(_ProjectUpdated value)? updated,
-    TResult Function(_ProjectDeleted value)? deleted,
-    TResult Function(_ProjectEditingCancelled value)? editingCancelled,
-    TResult Function(_ProjectEditingSaved value)? editingSaved,
+    TResult? Function(_ProjectFetched value)? fetched,
+    TResult? Function(_ProjectEdited value)? edited,
+    TResult? Function(_ProjectUpdated value)? updated,
+    TResult? Function(_ProjectDeleted value)? deleted,
+    TResult? Function(_ProjectEditingCancelled value)? editingCancelled,
+    TResult? Function(_ProjectEditingSaved value)? editingSaved,
   }) {
     return updated?.call(this);
   }
@@ -620,7 +590,7 @@ class _$_ProjectUpdated implements _ProjectUpdated {
 abstract class _ProjectUpdated implements ProjectEvent {
   const factory _ProjectUpdated(final Project project) = _$_ProjectUpdated;
 
-  Project get project => throw _privateConstructorUsedError;
+  Project get project;
   @JsonKey(ignore: true)
   _$$_ProjectUpdatedCopyWith<_$_ProjectUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -631,39 +601,29 @@ abstract class _$$_ProjectDeletedCopyWith<$Res> {
   factory _$$_ProjectDeletedCopyWith(
           _$_ProjectDeleted value, $Res Function(_$_ProjectDeleted) then) =
       __$$_ProjectDeletedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Project project});
-
-  $ProjectCopyWith<$Res> get project;
 }
 
 /// @nodoc
 class __$$_ProjectDeletedCopyWithImpl<$Res>
-    extends _$ProjectEventCopyWithImpl<$Res>
+    extends _$ProjectEventCopyWithImpl<$Res, _$_ProjectDeleted>
     implements _$$_ProjectDeletedCopyWith<$Res> {
   __$$_ProjectDeletedCopyWithImpl(
       _$_ProjectDeleted _value, $Res Function(_$_ProjectDeleted) _then)
-      : super(_value, (v) => _then(v as _$_ProjectDeleted));
+      : super(_value, _then);
 
-  @override
-  _$_ProjectDeleted get _value => super._value as _$_ProjectDeleted;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? project = freezed,
+    Object? project = null,
   }) {
     return _then(_$_ProjectDeleted(
-      project == freezed
+      null == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project,
     ));
-  }
-
-  @override
-  $ProjectCopyWith<$Res> get project {
-    return $ProjectCopyWith<$Res>(_value.project, (value) {
-      return _then(_value.copyWith(project: value));
-    });
   }
 }
 
@@ -694,6 +654,7 @@ class _$_ProjectDeleted implements _ProjectDeleted {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ProjectDeletedCopyWith<_$_ProjectDeleted> get copyWith =>
       __$$_ProjectDeletedCopyWithImpl<_$_ProjectDeleted>(this, _$identity);
 
@@ -714,12 +675,12 @@ class _$_ProjectDeleted implements _ProjectDeleted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Project? project, String authorID)? fetched,
-    TResult Function(Project project)? edited,
-    TResult Function(Project project)? updated,
-    TResult Function(Project project)? deleted,
-    TResult Function()? editingCancelled,
-    TResult Function(Project project, String title, String abstract)?
+    TResult? Function(Project? project, String authorID)? fetched,
+    TResult? Function(Project project)? edited,
+    TResult? Function(Project project)? updated,
+    TResult? Function(Project project)? deleted,
+    TResult? Function()? editingCancelled,
+    TResult? Function(Project project, String title, String abstract)?
         editingSaved,
   }) {
     return deleted?.call(project);
@@ -759,12 +720,12 @@ class _$_ProjectDeleted implements _ProjectDeleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ProjectFetched value)? fetched,
-    TResult Function(_ProjectEdited value)? edited,
-    TResult Function(_ProjectUpdated value)? updated,
-    TResult Function(_ProjectDeleted value)? deleted,
-    TResult Function(_ProjectEditingCancelled value)? editingCancelled,
-    TResult Function(_ProjectEditingSaved value)? editingSaved,
+    TResult? Function(_ProjectFetched value)? fetched,
+    TResult? Function(_ProjectEdited value)? edited,
+    TResult? Function(_ProjectUpdated value)? updated,
+    TResult? Function(_ProjectDeleted value)? deleted,
+    TResult? Function(_ProjectEditingCancelled value)? editingCancelled,
+    TResult? Function(_ProjectEditingSaved value)? editingSaved,
   }) {
     return deleted?.call(this);
   }
@@ -790,7 +751,7 @@ class _$_ProjectDeleted implements _ProjectDeleted {
 abstract class _ProjectDeleted implements ProjectEvent {
   const factory _ProjectDeleted(final Project project) = _$_ProjectDeleted;
 
-  Project get project => throw _privateConstructorUsedError;
+  Project get project;
   @JsonKey(ignore: true)
   _$$_ProjectDeletedCopyWith<_$_ProjectDeleted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -805,15 +766,11 @@ abstract class _$$_ProjectEditingCancelledCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ProjectEditingCancelledCopyWithImpl<$Res>
-    extends _$ProjectEventCopyWithImpl<$Res>
+    extends _$ProjectEventCopyWithImpl<$Res, _$_ProjectEditingCancelled>
     implements _$$_ProjectEditingCancelledCopyWith<$Res> {
   __$$_ProjectEditingCancelledCopyWithImpl(_$_ProjectEditingCancelled _value,
       $Res Function(_$_ProjectEditingCancelled) _then)
-      : super(_value, (v) => _then(v as _$_ProjectEditingCancelled));
-
-  @override
-  _$_ProjectEditingCancelled get _value =>
-      super._value as _$_ProjectEditingCancelled;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -853,12 +810,12 @@ class _$_ProjectEditingCancelled implements _ProjectEditingCancelled {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Project? project, String authorID)? fetched,
-    TResult Function(Project project)? edited,
-    TResult Function(Project project)? updated,
-    TResult Function(Project project)? deleted,
-    TResult Function()? editingCancelled,
-    TResult Function(Project project, String title, String abstract)?
+    TResult? Function(Project? project, String authorID)? fetched,
+    TResult? Function(Project project)? edited,
+    TResult? Function(Project project)? updated,
+    TResult? Function(Project project)? deleted,
+    TResult? Function()? editingCancelled,
+    TResult? Function(Project project, String title, String abstract)?
         editingSaved,
   }) {
     return editingCancelled?.call();
@@ -898,12 +855,12 @@ class _$_ProjectEditingCancelled implements _ProjectEditingCancelled {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ProjectFetched value)? fetched,
-    TResult Function(_ProjectEdited value)? edited,
-    TResult Function(_ProjectUpdated value)? updated,
-    TResult Function(_ProjectDeleted value)? deleted,
-    TResult Function(_ProjectEditingCancelled value)? editingCancelled,
-    TResult Function(_ProjectEditingSaved value)? editingSaved,
+    TResult? Function(_ProjectFetched value)? fetched,
+    TResult? Function(_ProjectEdited value)? edited,
+    TResult? Function(_ProjectUpdated value)? updated,
+    TResult? Function(_ProjectDeleted value)? deleted,
+    TResult? Function(_ProjectEditingCancelled value)? editingCancelled,
+    TResult? Function(_ProjectEditingSaved value)? editingSaved,
   }) {
     return editingCancelled?.call(this);
   }
@@ -935,49 +892,39 @@ abstract class _$$_ProjectEditingSavedCopyWith<$Res> {
   factory _$$_ProjectEditingSavedCopyWith(_$_ProjectEditingSaved value,
           $Res Function(_$_ProjectEditingSaved) then) =
       __$$_ProjectEditingSavedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Project project, String title, String abstract});
-
-  $ProjectCopyWith<$Res> get project;
 }
 
 /// @nodoc
 class __$$_ProjectEditingSavedCopyWithImpl<$Res>
-    extends _$ProjectEventCopyWithImpl<$Res>
+    extends _$ProjectEventCopyWithImpl<$Res, _$_ProjectEditingSaved>
     implements _$$_ProjectEditingSavedCopyWith<$Res> {
   __$$_ProjectEditingSavedCopyWithImpl(_$_ProjectEditingSaved _value,
       $Res Function(_$_ProjectEditingSaved) _then)
-      : super(_value, (v) => _then(v as _$_ProjectEditingSaved));
+      : super(_value, _then);
 
-  @override
-  _$_ProjectEditingSaved get _value => super._value as _$_ProjectEditingSaved;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? project = freezed,
-    Object? title = freezed,
-    Object? abstract = freezed,
+    Object? project = null,
+    Object? title = null,
+    Object? abstract = null,
   }) {
     return _then(_$_ProjectEditingSaved(
-      project: project == freezed
+      project: null == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      abstract: abstract == freezed
+      abstract: null == abstract
           ? _value.abstract
           : abstract // ignore: cast_nullable_to_non_nullable
               as String,
     ));
-  }
-
-  @override
-  $ProjectCopyWith<$Res> get project {
-    return $ProjectCopyWith<$Res>(_value.project, (value) {
-      return _then(_value.copyWith(project: value));
-    });
   }
 }
 
@@ -1005,19 +952,18 @@ class _$_ProjectEditingSaved implements _ProjectEditingSaved {
         (other.runtimeType == runtimeType &&
             other is _$_ProjectEditingSaved &&
             const DeepCollectionEquality().equals(other.project, project) &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.abstract, abstract));
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.abstract, abstract) ||
+                other.abstract == abstract));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(project),
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(abstract));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(project), title, abstract);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ProjectEditingSavedCopyWith<_$_ProjectEditingSaved> get copyWith =>
       __$$_ProjectEditingSavedCopyWithImpl<_$_ProjectEditingSaved>(
           this, _$identity);
@@ -1039,12 +985,12 @@ class _$_ProjectEditingSaved implements _ProjectEditingSaved {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Project? project, String authorID)? fetched,
-    TResult Function(Project project)? edited,
-    TResult Function(Project project)? updated,
-    TResult Function(Project project)? deleted,
-    TResult Function()? editingCancelled,
-    TResult Function(Project project, String title, String abstract)?
+    TResult? Function(Project? project, String authorID)? fetched,
+    TResult? Function(Project project)? edited,
+    TResult? Function(Project project)? updated,
+    TResult? Function(Project project)? deleted,
+    TResult? Function()? editingCancelled,
+    TResult? Function(Project project, String title, String abstract)?
         editingSaved,
   }) {
     return editingSaved?.call(project, title, abstract);
@@ -1084,12 +1030,12 @@ class _$_ProjectEditingSaved implements _ProjectEditingSaved {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ProjectFetched value)? fetched,
-    TResult Function(_ProjectEdited value)? edited,
-    TResult Function(_ProjectUpdated value)? updated,
-    TResult Function(_ProjectDeleted value)? deleted,
-    TResult Function(_ProjectEditingCancelled value)? editingCancelled,
-    TResult Function(_ProjectEditingSaved value)? editingSaved,
+    TResult? Function(_ProjectFetched value)? fetched,
+    TResult? Function(_ProjectEdited value)? edited,
+    TResult? Function(_ProjectUpdated value)? updated,
+    TResult? Function(_ProjectDeleted value)? deleted,
+    TResult? Function(_ProjectEditingCancelled value)? editingCancelled,
+    TResult? Function(_ProjectEditingSaved value)? editingSaved,
   }) {
     return editingSaved?.call(this);
   }
@@ -1118,9 +1064,9 @@ abstract class _ProjectEditingSaved implements ProjectEvent {
       required final String title,
       required final String abstract}) = _$_ProjectEditingSaved;
 
-  Project get project => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  String get abstract => throw _privateConstructorUsedError;
+  Project get project;
+  String get title;
+  String get abstract;
   @JsonKey(ignore: true)
   _$$_ProjectEditingSavedCopyWith<_$_ProjectEditingSaved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1145,46 +1091,37 @@ mixin _$ProjectState {
 abstract class $ProjectStateCopyWith<$Res> {
   factory $ProjectStateCopyWith(
           ProjectState value, $Res Function(ProjectState) then) =
-      _$ProjectStateCopyWithImpl<$Res>;
+      _$ProjectStateCopyWithImpl<$Res, ProjectState>;
+  @useResult
   $Res call({ProjectStatus status, Project? project});
-
-  $ProjectCopyWith<$Res>? get project;
 }
 
 /// @nodoc
-class _$ProjectStateCopyWithImpl<$Res> implements $ProjectStateCopyWith<$Res> {
+class _$ProjectStateCopyWithImpl<$Res, $Val extends ProjectState>
+    implements $ProjectStateCopyWith<$Res> {
   _$ProjectStateCopyWithImpl(this._value, this._then);
 
-  final ProjectState _value;
   // ignore: unused_field
-  final $Res Function(ProjectState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
-    Object? project = freezed,
+    Object? status = null,
+    Object? project = null,
   }) {
     return _then(_value.copyWith(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProjectStatus,
-      project: project == freezed
+      project: null == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project?,
-    ));
-  }
-
-  @override
-  $ProjectCopyWith<$Res>? get project {
-    if (_value.project == null) {
-      return null;
-    }
-
-    return $ProjectCopyWith<$Res>(_value.project!, (value) {
-      return _then(_value.copyWith(project: value));
-    });
+    ) as $Val);
   }
 }
 
@@ -1195,34 +1132,30 @@ abstract class _$$_ProjectStateCopyWith<$Res>
           _$_ProjectState value, $Res Function(_$_ProjectState) then) =
       __$$_ProjectStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({ProjectStatus status, Project? project});
-
-  @override
-  $ProjectCopyWith<$Res>? get project;
 }
 
 /// @nodoc
 class __$$_ProjectStateCopyWithImpl<$Res>
-    extends _$ProjectStateCopyWithImpl<$Res>
+    extends _$ProjectStateCopyWithImpl<$Res, _$_ProjectState>
     implements _$$_ProjectStateCopyWith<$Res> {
   __$$_ProjectStateCopyWithImpl(
       _$_ProjectState _value, $Res Function(_$_ProjectState) _then)
-      : super(_value, (v) => _then(v as _$_ProjectState));
+      : super(_value, _then);
 
-  @override
-  _$_ProjectState get _value => super._value as _$_ProjectState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = freezed,
-    Object? project = freezed,
+    Object? status = null,
+    Object? project = null,
   }) {
     return _then(_$_ProjectState(
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProjectStatus,
-      project: project == freezed
+      project: null == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project?,
@@ -1254,25 +1187,26 @@ class _$_ProjectState implements _ProjectState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ProjectState &&
-            const DeepCollectionEquality().equals(other.status, status) &&
+            (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other.project, project));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(project));
+      runtimeType, status, const DeepCollectionEquality().hash(project));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ProjectStateCopyWith<_$_ProjectState> get copyWith =>
       __$$_ProjectStateCopyWithImpl<_$_ProjectState>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProjectStateToJson(this);
+    return _$$_ProjectStateToJson(
+      this,
+    );
   }
 }
 
@@ -1284,9 +1218,9 @@ abstract class _ProjectState implements ProjectState {
       _$_ProjectState.fromJson;
 
   @override
-  ProjectStatus get status => throw _privateConstructorUsedError;
+  ProjectStatus get status;
   @override
-  Project? get project => throw _privateConstructorUsedError;
+  Project? get project;
   @override
   @JsonKey(ignore: true)
   _$$_ProjectStateCopyWith<_$_ProjectState> get copyWith =>

@@ -39,7 +39,7 @@ class _HomeViewState extends State<HomeView> {
       ),
       HelpdeskScreen(
         title: L10nString.of(context).allOpenedTickets,
-        icon: Icons.feed,
+        icon: Icons.list,
         screen: const TicketsScreen(),
       ),
     ];
