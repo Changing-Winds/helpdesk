@@ -1,6 +1,7 @@
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'dart:ui' as ui;
 import 'package:helpdesk/features/application/bloc/application_bloc.dart';
+import 'package:helpdesk/features/create_ticket/views/create_ticket_screen.dart';
 import 'package:helpdesk/features/dashboard/views/dashboard_screen.dart';
 import 'package:helpdesk/features/home/bloc/home_bloc.dart';
 import 'package:helpdesk/features/tickets/views/tickets_screen.dart';
@@ -27,6 +28,11 @@ class _HomeViewState extends State<HomeView> {
     bool isLargeScreen = false;
 
     List<HelpdeskScreen> screens = [
+      HelpdeskScreen(
+        title: L10nString.of(context).newTicket,
+        icon: Icons.add,
+        screen: const CreateTicketScreen(),
+      ),
       HelpdeskScreen(
         title: L10nString.of(context).dashboard,
         icon: Icons.dashboard,
@@ -110,79 +116,79 @@ class _HomeViewState extends State<HomeView> {
                   : null,
               body: Container(
                 color: Theme.of(context).colorScheme.background,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                child: Stack(
                   children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.only(
+                          left: isLargeScreen
+                              ? applicationState.isDrawerVisible
+                                  ? 300
+                                  : 80
+                              : 0),
+                      child: screens[_selectedIndex].screen,
+                    ),
                     isLargeScreen
-                        ? NavigationRail(
-                            backgroundColor: Theme.of(context)
-                                .colorScheme
-                                .surfaceTint
-                                .withOpacity(0.1),
-                            elevation: 5.0,
-                            leading: applicationState.isDrawerVisible
-                                ? Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: ElevatedButton.icon(
-                                        onPressed: () {},
-                                        icon: const Icon(
-                                          Icons.add,
-                                          size: 30.0,
-                                        ),
-                                        label: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 8.0),
-                                          child: Text('New Ticket',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .bodyLarge),
-                                        )),
-                                  )
-                                : IconButton(
-                                    icon: const Icon(Icons.add),
-                                    iconSize: 30.0,
-                                    onPressed: () {},
-                                  ),
-                            selectedIndex: _selectedIndex,
-                            extended: applicationState.isDrawerVisible,
-                            destinations:
-                                screens.map((e) => e.destination).toList(),
-                            labelType: NavigationRailLabelType.none,
-                            useIndicator: true,
-                            unselectedLabelTextStyle: Theme.of(context)
-                                .textTheme
-                                .labelLarge!
-                                .copyWith(
-                                    fontWeight: FontWeight.normal,
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onSurface
-                                        .withOpacity(0.5)),
-                            selectedLabelTextStyle: Theme.of(context)
-                                .textTheme
-                                .labelLarge!
-                                .copyWith(
-                                    fontWeight: FontWeight.w300,
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onSurface),
-                            // unselectedIconTheme: IconThemeData(size: 20),
-                            // selectedIconTheme: IconThemeData(
-                            //     color: Colors.red, opacity: 1.0, size: 30),
-                            onDestinationSelected: (int index) {
-                              setState(() {
-                                _selectedIndex = index;
-                              });
-                            },
+                        ? SizedBox(
+                            width: applicationState.isDrawerVisible ? 300 : 80,
+                            child: NavigationRail(
+                              elevation: 4.0,
+                              // leading: applicationState.isDrawerVisible
+                              //     ? Padding(
+                              //         padding: const EdgeInsets.all(4.0),
+                              //         child: ElevatedButton.icon(
+                              //             onPressed: () {},
+                              //             icon: const Icon(
+                              //               Icons.add,
+                              //               size: 30.0,
+                              //             ),
+                              //             label: Padding(
+                              //               padding: const EdgeInsets.symmetric(
+                              //                   vertical: 8.0),
+                              //               child: Text('New Ticket',
+                              //                   style: Theme.of(context)
+                              //                       .textTheme
+                              //                       .bodyLarge),
+                              //             )),
+                              //       )
+                              //     : IconButton(
+                              //         icon: const Icon(Icons.add),
+                              //         iconSize: 30.0,
+                              //         onPressed: () {},
+                              //       ),
+                              selectedIndex: _selectedIndex,
+                              extended: applicationState.isDrawerVisible,
+                              destinations:
+                                  screens.map((e) => e.destination).toList(),
+                              labelType: NavigationRailLabelType.none,
+                              useIndicator: true,
+                              unselectedLabelTextStyle: Theme.of(context)
+                                  .textTheme
+                                  .labelLarge!
+                                  .copyWith(
+                                      fontWeight: FontWeight.normal,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSurface
+                                          .withOpacity(0.5)),
+                              selectedLabelTextStyle: Theme.of(context)
+                                  .textTheme
+                                  .labelLarge!
+                                  .copyWith(
+                                      fontWeight: FontWeight.w300,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSurface),
+                              // unselectedIconTheme: IconThemeData(size: 20),
+                              // selectedIconTheme: IconThemeData(
+                              //     color: Colors.red, opacity: 1.0, size: 30),
+                              onDestinationSelected: (int index) {
+                                setState(() {
+                                  _selectedIndex = index;
+                                });
+                              },
+                            ),
                           )
-                        : Container(),
-                    Flexible(flex: 5, child: screens[_selectedIndex].screen
-                        // ErrorView(
-                        //   icon: Icons.bedtime_outlined,
-                        //   errorTitle: 'Nothing to show yet',
-                        // ),
-                        )
+                        : Container()
                   ],
                 ),
               ));
