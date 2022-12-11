@@ -19,6 +19,7 @@ class CreateTicketState with _$CreateTicketState {
   const factory CreateTicketState({
     @Default(CreateTicketStatus.ready) CreateTicketStatus status,
     @JsonKey(ignore: true) @Default(1) int currentStep,
+    @JsonKey(ignore: true) Issue? issue,
   }) = _CreateTicketState;
 
   factory CreateTicketState.fromJson(Map<String, dynamic> json) =>

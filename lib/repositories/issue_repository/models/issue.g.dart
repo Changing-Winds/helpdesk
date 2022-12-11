@@ -16,6 +16,8 @@ _$_Issue _$$_IssueFromJson(Map<String, dynamic> json) => _$_Issue(
           : DateTime.parse(json['updatedAt'] as String),
       criticity: $enumDecodeNullable(_$CriticityEnumMap, json['criticity']) ??
           Criticity.minor,
+      product: $enumDecodeNullable(_$ProductEnumMap, json['product']) ??
+          Product.flatguide,
     );
 
 Map<String, dynamic> _$$_IssueToJson(_$_Issue instance) => <String, dynamic>{
@@ -25,6 +27,7 @@ Map<String, dynamic> _$$_IssueToJson(_$_Issue instance) => <String, dynamic>{
       'createdAt': instance.createdAt.toIso8601String(),
       'updatedAt': instance.updatedAt?.toIso8601String(),
       'criticity': _$CriticityEnumMap[instance.criticity]!,
+      'product': _$ProductEnumMap[instance.product]!,
     };
 
 const _$CriticityEnumMap = {
@@ -32,4 +35,9 @@ const _$CriticityEnumMap = {
   Criticity.medium: 'medium',
   Criticity.major: 'major',
   Criticity.critical: 'critical',
+};
+
+const _$ProductEnumMap = {
+  Product.flatguide: 'flatguide',
+  Product.saas: 'saas',
 };

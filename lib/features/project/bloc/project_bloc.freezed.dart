@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'project_bloc.dart';
 
@@ -121,11 +121,11 @@ class __$$_ProjectFetchedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? project = null,
+    Object? project = freezed,
     Object? authorID = null,
   }) {
     return _then(_$_ProjectFetched(
-      project: null == project
+      project: freezed == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project?,
@@ -294,10 +294,10 @@ class __$$_ProjectEditedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? project = null,
+    Object? project = freezed,
   }) {
     return _then(_$_ProjectEdited(
-      null == project
+      freezed == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project,
@@ -455,10 +455,10 @@ class __$$_ProjectUpdatedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? project = null,
+    Object? project = freezed,
   }) {
     return _then(_$_ProjectUpdated(
-      null == project
+      freezed == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project,
@@ -616,10 +616,10 @@ class __$$_ProjectDeletedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? project = null,
+    Object? project = freezed,
   }) {
     return _then(_$_ProjectDeleted(
-      null == project
+      freezed == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project,
@@ -907,12 +907,12 @@ class __$$_ProjectEditingSavedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? project = null,
+    Object? project = freezed,
     Object? title = null,
     Object? abstract = null,
   }) {
     return _then(_$_ProjectEditingSaved(
-      project: null == project
+      project: freezed == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project,
@@ -1110,14 +1110,14 @@ class _$ProjectStateCopyWithImpl<$Res, $Val extends ProjectState>
   @override
   $Res call({
     Object? status = null,
-    Object? project = null,
+    Object? project = freezed,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProjectStatus,
-      project: null == project
+      project: freezed == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project?,
@@ -1148,14 +1148,14 @@ class __$$_ProjectStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
-    Object? project = null,
+    Object? project = freezed,
   }) {
     return _then(_$_ProjectState(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ProjectStatus,
-      project: null == project
+      project: freezed == project
           ? _value.project
           : project // ignore: cast_nullable_to_non_nullable
               as Project?,

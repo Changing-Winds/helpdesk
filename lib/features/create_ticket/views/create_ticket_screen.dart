@@ -10,7 +10,8 @@ class CreateTicketScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CreateTicketBloc(),
+      create: (context) =>
+          CreateTicketBloc()..add(const CreateTicketEvent.started()),
       child: const CreateTicketView(),
     );
   }

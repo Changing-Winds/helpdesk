@@ -1,4 +1,8 @@
 {
+  "affectedProduct": "Product affected by the issue",
+  "@affectedProduct": {
+    "description": "Product dropdown label"
+  },
   "allOpenedTickets": "All Opened Tickets",
   "@allOpenedTickets": {
     "description": "Name of the opened tickets screen"
@@ -6,6 +10,18 @@
   "dashboard": "Dashboard",
   "@dashboard": {
     "description": "Name of the default home screen of the app"
+  },
+  "issueEnvironment": "Environment where the issue occured",
+  "@issueEnvironment": {
+    "description": "Title of the third New Ticjet Screen"
+  },
+  "impactedFeature": "Impacted Feature",
+  "@impactedFeature": {
+    "description": "Title of the first New Ticjet Screen"
+  },
+  "issueInDetails": "Issue In Details",
+  "@issueInDetails": {
+    "description": "Title of the second New Ticjet Screen"
   },
   "newTicket": "New Ticket",
   "@newTicket": {

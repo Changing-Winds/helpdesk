@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'create_ticket_bloc.dart';
 
@@ -21,6 +21,7 @@ mixin _$CreateTicketEvent {
     required TResult Function() started,
     required TResult Function() nextStepRequested,
     required TResult Function() featureStepSaved,
+    required TResult Function(Product product) productChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$CreateTicketEvent {
     TResult? Function()? started,
     TResult? Function()? nextStepRequested,
     TResult? Function()? featureStepSaved,
+    TResult? Function(Product product)? productChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$CreateTicketEvent {
     TResult Function()? started,
     TResult Function()? nextStepRequested,
     TResult Function()? featureStepSaved,
+    TResult Function(Product product)? productChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,6 +48,7 @@ mixin _$CreateTicketEvent {
         nextStepRequested,
     required TResult Function(_CreateTicketFeatureStepSaved value)
         featureStepSaved,
+    required TResult Function(_CreateTicketProductChanged value) productChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +56,7 @@ mixin _$CreateTicketEvent {
     TResult? Function(_CreateTicketStarted value)? started,
     TResult? Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult? Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult? Function(_CreateTicketProductChanged value)? productChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +64,7 @@ mixin _$CreateTicketEvent {
     TResult Function(_CreateTicketStarted value)? started,
     TResult Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult Function(_CreateTicketProductChanged value)? productChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -123,6 +129,7 @@ class _$_CreateTicketStarted implements _CreateTicketStarted {
     required TResult Function() started,
     required TResult Function() nextStepRequested,
     required TResult Function() featureStepSaved,
+    required TResult Function(Product product) productChanged,
   }) {
     return started();
   }
@@ -133,6 +140,7 @@ class _$_CreateTicketStarted implements _CreateTicketStarted {
     TResult? Function()? started,
     TResult? Function()? nextStepRequested,
     TResult? Function()? featureStepSaved,
+    TResult? Function(Product product)? productChanged,
   }) {
     return started?.call();
   }
@@ -143,6 +151,7 @@ class _$_CreateTicketStarted implements _CreateTicketStarted {
     TResult Function()? started,
     TResult Function()? nextStepRequested,
     TResult Function()? featureStepSaved,
+    TResult Function(Product product)? productChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -159,6 +168,7 @@ class _$_CreateTicketStarted implements _CreateTicketStarted {
         nextStepRequested,
     required TResult Function(_CreateTicketFeatureStepSaved value)
         featureStepSaved,
+    required TResult Function(_CreateTicketProductChanged value) productChanged,
   }) {
     return started(this);
   }
@@ -169,6 +179,7 @@ class _$_CreateTicketStarted implements _CreateTicketStarted {
     TResult? Function(_CreateTicketStarted value)? started,
     TResult? Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult? Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult? Function(_CreateTicketProductChanged value)? productChanged,
   }) {
     return started?.call(this);
   }
@@ -179,6 +190,7 @@ class _$_CreateTicketStarted implements _CreateTicketStarted {
     TResult Function(_CreateTicketStarted value)? started,
     TResult Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult Function(_CreateTicketProductChanged value)? productChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -238,6 +250,7 @@ class _$_CreateTicketNextStepRequested
     required TResult Function() started,
     required TResult Function() nextStepRequested,
     required TResult Function() featureStepSaved,
+    required TResult Function(Product product) productChanged,
   }) {
     return nextStepRequested();
   }
@@ -248,6 +261,7 @@ class _$_CreateTicketNextStepRequested
     TResult? Function()? started,
     TResult? Function()? nextStepRequested,
     TResult? Function()? featureStepSaved,
+    TResult? Function(Product product)? productChanged,
   }) {
     return nextStepRequested?.call();
   }
@@ -258,6 +272,7 @@ class _$_CreateTicketNextStepRequested
     TResult Function()? started,
     TResult Function()? nextStepRequested,
     TResult Function()? featureStepSaved,
+    TResult Function(Product product)? productChanged,
     required TResult orElse(),
   }) {
     if (nextStepRequested != null) {
@@ -274,6 +289,7 @@ class _$_CreateTicketNextStepRequested
         nextStepRequested,
     required TResult Function(_CreateTicketFeatureStepSaved value)
         featureStepSaved,
+    required TResult Function(_CreateTicketProductChanged value) productChanged,
   }) {
     return nextStepRequested(this);
   }
@@ -284,6 +300,7 @@ class _$_CreateTicketNextStepRequested
     TResult? Function(_CreateTicketStarted value)? started,
     TResult? Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult? Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult? Function(_CreateTicketProductChanged value)? productChanged,
   }) {
     return nextStepRequested?.call(this);
   }
@@ -294,6 +311,7 @@ class _$_CreateTicketNextStepRequested
     TResult Function(_CreateTicketStarted value)? started,
     TResult Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult Function(_CreateTicketProductChanged value)? productChanged,
     required TResult orElse(),
   }) {
     if (nextStepRequested != null) {
@@ -353,6 +371,7 @@ class _$_CreateTicketFeatureStepSaved implements _CreateTicketFeatureStepSaved {
     required TResult Function() started,
     required TResult Function() nextStepRequested,
     required TResult Function() featureStepSaved,
+    required TResult Function(Product product) productChanged,
   }) {
     return featureStepSaved();
   }
@@ -363,6 +382,7 @@ class _$_CreateTicketFeatureStepSaved implements _CreateTicketFeatureStepSaved {
     TResult? Function()? started,
     TResult? Function()? nextStepRequested,
     TResult? Function()? featureStepSaved,
+    TResult? Function(Product product)? productChanged,
   }) {
     return featureStepSaved?.call();
   }
@@ -373,6 +393,7 @@ class _$_CreateTicketFeatureStepSaved implements _CreateTicketFeatureStepSaved {
     TResult Function()? started,
     TResult Function()? nextStepRequested,
     TResult Function()? featureStepSaved,
+    TResult Function(Product product)? productChanged,
     required TResult orElse(),
   }) {
     if (featureStepSaved != null) {
@@ -389,6 +410,7 @@ class _$_CreateTicketFeatureStepSaved implements _CreateTicketFeatureStepSaved {
         nextStepRequested,
     required TResult Function(_CreateTicketFeatureStepSaved value)
         featureStepSaved,
+    required TResult Function(_CreateTicketProductChanged value) productChanged,
   }) {
     return featureStepSaved(this);
   }
@@ -399,6 +421,7 @@ class _$_CreateTicketFeatureStepSaved implements _CreateTicketFeatureStepSaved {
     TResult? Function(_CreateTicketStarted value)? started,
     TResult? Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult? Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult? Function(_CreateTicketProductChanged value)? productChanged,
   }) {
     return featureStepSaved?.call(this);
   }
@@ -409,6 +432,7 @@ class _$_CreateTicketFeatureStepSaved implements _CreateTicketFeatureStepSaved {
     TResult Function(_CreateTicketStarted value)? started,
     TResult Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult Function(_CreateTicketProductChanged value)? productChanged,
     required TResult orElse(),
   }) {
     if (featureStepSaved != null) {
@@ -423,6 +447,158 @@ abstract class _CreateTicketFeatureStepSaved implements CreateTicketEvent {
       _$_CreateTicketFeatureStepSaved;
 }
 
+/// @nodoc
+abstract class _$$_CreateTicketProductChangedCopyWith<$Res> {
+  factory _$$_CreateTicketProductChangedCopyWith(
+          _$_CreateTicketProductChanged value,
+          $Res Function(_$_CreateTicketProductChanged) then) =
+      __$$_CreateTicketProductChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Product product});
+}
+
+/// @nodoc
+class __$$_CreateTicketProductChangedCopyWithImpl<$Res>
+    extends _$CreateTicketEventCopyWithImpl<$Res, _$_CreateTicketProductChanged>
+    implements _$$_CreateTicketProductChangedCopyWith<$Res> {
+  __$$_CreateTicketProductChangedCopyWithImpl(
+      _$_CreateTicketProductChanged _value,
+      $Res Function(_$_CreateTicketProductChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? product = freezed,
+  }) {
+    return _then(_$_CreateTicketProductChanged(
+      freezed == product
+          ? _value.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as Product,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CreateTicketProductChanged implements _CreateTicketProductChanged {
+  const _$_CreateTicketProductChanged(this.product);
+
+  @override
+  final Product product;
+
+  @override
+  String toString() {
+    return 'CreateTicketEvent.productChanged(product: $product)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CreateTicketProductChanged &&
+            const DeepCollectionEquality().equals(other.product, product));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(product));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CreateTicketProductChangedCopyWith<_$_CreateTicketProductChanged>
+      get copyWith => __$$_CreateTicketProductChangedCopyWithImpl<
+          _$_CreateTicketProductChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() nextStepRequested,
+    required TResult Function() featureStepSaved,
+    required TResult Function(Product product) productChanged,
+  }) {
+    return productChanged(product);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? nextStepRequested,
+    TResult? Function()? featureStepSaved,
+    TResult? Function(Product product)? productChanged,
+  }) {
+    return productChanged?.call(product);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? nextStepRequested,
+    TResult Function()? featureStepSaved,
+    TResult Function(Product product)? productChanged,
+    required TResult orElse(),
+  }) {
+    if (productChanged != null) {
+      return productChanged(product);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CreateTicketStarted value) started,
+    required TResult Function(_CreateTicketNextStepRequested value)
+        nextStepRequested,
+    required TResult Function(_CreateTicketFeatureStepSaved value)
+        featureStepSaved,
+    required TResult Function(_CreateTicketProductChanged value) productChanged,
+  }) {
+    return productChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CreateTicketStarted value)? started,
+    TResult? Function(_CreateTicketNextStepRequested value)? nextStepRequested,
+    TResult? Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult? Function(_CreateTicketProductChanged value)? productChanged,
+  }) {
+    return productChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CreateTicketStarted value)? started,
+    TResult Function(_CreateTicketNextStepRequested value)? nextStepRequested,
+    TResult Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult Function(_CreateTicketProductChanged value)? productChanged,
+    required TResult orElse(),
+  }) {
+    if (productChanged != null) {
+      return productChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreateTicketProductChanged implements CreateTicketEvent {
+  const factory _CreateTicketProductChanged(final Product product) =
+      _$_CreateTicketProductChanged;
+
+  Product get product;
+  @JsonKey(ignore: true)
+  _$$_CreateTicketProductChangedCopyWith<_$_CreateTicketProductChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 CreateTicketState _$CreateTicketStateFromJson(Map<String, dynamic> json) {
   return _CreateTicketState.fromJson(json);
 }
@@ -432,6 +608,8 @@ mixin _$CreateTicketState {
   CreateTicketStatus get status => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   int get currentStep => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  Issue? get issue => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -446,7 +624,11 @@ abstract class $CreateTicketStateCopyWith<$Res> {
       _$CreateTicketStateCopyWithImpl<$Res, CreateTicketState>;
   @useResult
   $Res call(
-      {CreateTicketStatus status, @JsonKey(ignore: true) int currentStep});
+      {CreateTicketStatus status,
+      @JsonKey(ignore: true) int currentStep,
+      @JsonKey(ignore: true) Issue? issue});
+
+  $IssueCopyWith<$Res>? get issue;
 }
 
 /// @nodoc
@@ -464,6 +646,7 @@ class _$CreateTicketStateCopyWithImpl<$Res, $Val extends CreateTicketState>
   $Res call({
     Object? status = null,
     Object? currentStep = null,
+    Object? issue = freezed,
   }) {
     return _then(_value.copyWith(
       status: null == status
@@ -474,7 +657,23 @@ class _$CreateTicketStateCopyWithImpl<$Res, $Val extends CreateTicketState>
           ? _value.currentStep
           : currentStep // ignore: cast_nullable_to_non_nullable
               as int,
+      issue: freezed == issue
+          ? _value.issue
+          : issue // ignore: cast_nullable_to_non_nullable
+              as Issue?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $IssueCopyWith<$Res>? get issue {
+    if (_value.issue == null) {
+      return null;
+    }
+
+    return $IssueCopyWith<$Res>(_value.issue!, (value) {
+      return _then(_value.copyWith(issue: value) as $Val);
+    });
   }
 }
 
@@ -487,7 +686,12 @@ abstract class _$$_CreateTicketStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {CreateTicketStatus status, @JsonKey(ignore: true) int currentStep});
+      {CreateTicketStatus status,
+      @JsonKey(ignore: true) int currentStep,
+      @JsonKey(ignore: true) Issue? issue});
+
+  @override
+  $IssueCopyWith<$Res>? get issue;
 }
 
 /// @nodoc
@@ -503,6 +707,7 @@ class __$$_CreateTicketStateCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
     Object? currentStep = null,
+    Object? issue = freezed,
   }) {
     return _then(_$_CreateTicketState(
       status: null == status
@@ -513,6 +718,10 @@ class __$$_CreateTicketStateCopyWithImpl<$Res>
           ? _value.currentStep
           : currentStep // ignore: cast_nullable_to_non_nullable
               as int,
+      issue: freezed == issue
+          ? _value.issue
+          : issue // ignore: cast_nullable_to_non_nullable
+              as Issue?,
     ));
   }
 }
@@ -522,7 +731,8 @@ class __$$_CreateTicketStateCopyWithImpl<$Res>
 class _$_CreateTicketState implements _CreateTicketState {
   const _$_CreateTicketState(
       {this.status = CreateTicketStatus.ready,
-      @JsonKey(ignore: true) this.currentStep = 1});
+      @JsonKey(ignore: true) this.currentStep = 1,
+      @JsonKey(ignore: true) this.issue});
 
   factory _$_CreateTicketState.fromJson(Map<String, dynamic> json) =>
       _$$_CreateTicketStateFromJson(json);
@@ -533,10 +743,13 @@ class _$_CreateTicketState implements _CreateTicketState {
   @override
   @JsonKey(ignore: true)
   final int currentStep;
+  @override
+  @JsonKey(ignore: true)
+  final Issue? issue;
 
   @override
   String toString() {
-    return 'CreateTicketState(status: $status, currentStep: $currentStep)';
+    return 'CreateTicketState(status: $status, currentStep: $currentStep, issue: $issue)';
   }
 
   @override
@@ -546,12 +759,13 @@ class _$_CreateTicketState implements _CreateTicketState {
             other is _$_CreateTicketState &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.currentStep, currentStep) ||
-                other.currentStep == currentStep));
+                other.currentStep == currentStep) &&
+            (identical(other.issue, issue) || other.issue == issue));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, status, currentStep);
+  int get hashCode => Object.hash(runtimeType, status, currentStep, issue);
 
   @JsonKey(ignore: true)
   @override
@@ -571,7 +785,8 @@ class _$_CreateTicketState implements _CreateTicketState {
 abstract class _CreateTicketState implements CreateTicketState {
   const factory _CreateTicketState(
       {final CreateTicketStatus status,
-      @JsonKey(ignore: true) final int currentStep}) = _$_CreateTicketState;
+      @JsonKey(ignore: true) final int currentStep,
+      @JsonKey(ignore: true) final Issue? issue}) = _$_CreateTicketState;
 
   factory _CreateTicketState.fromJson(Map<String, dynamic> json) =
       _$_CreateTicketState.fromJson;
@@ -581,6 +796,9 @@ abstract class _CreateTicketState implements CreateTicketState {
   @override
   @JsonKey(ignore: true)
   int get currentStep;
+  @override
+  @JsonKey(ignore: true)
+  Issue? get issue;
   @override
   @JsonKey(ignore: true)
   _$$_CreateTicketStateCopyWith<_$_CreateTicketState> get copyWith =>

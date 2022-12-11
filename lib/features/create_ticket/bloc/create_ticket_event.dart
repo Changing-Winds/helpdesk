@@ -7,4 +7,6 @@ class CreateTicketEvent with _$CreateTicketEvent {
       _CreateTicketNextStepRequested;
   const factory CreateTicketEvent.featureStepSaved() =
       _CreateTicketFeatureStepSaved;
+  const factory CreateTicketEvent.productChanged(Product product) =
+      _CreateTicketProductChanged;
 }

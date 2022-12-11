@@ -1,6 +1,10 @@
 {
+  "affectedProduct": "Produit affecté",
   "allOpenedTickets": "Tous les tickets ouverts",
   "dashboard": "Tableau de bord",
+  "impactedFeature": "Fonctionnalité impactée",
+  "issueEnvironment": "Environnement où le problème a été constaté",
+  "issueInDetails": "Détails du problème rencontré",
   "newTicket": "Nouveau ticket",
   "yourOpenedTickets": "Vos tickets ouverts"
 }

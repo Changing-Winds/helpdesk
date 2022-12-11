@@ -18,7 +18,7 @@ class DoneWizardView extends StatelessWidget {
           Text(
             "Done",
             // L10nString.of(context).newTicket,
-            style: Theme.of(context).textTheme.displayMedium,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
           PrimaryButton(
             onPressed: onNextButtonTapped,

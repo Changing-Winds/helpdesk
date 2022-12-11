@@ -27,12 +27,16 @@ class WizardProgressionIndicator extends StatelessWidget {
         height: isCompact ? 10.0 : 20.0,
         child: Stack(
           children: [
-            Container(color: Theme.of(context).colorScheme.surfaceVariant),
+            Container(
+                color: Theme.of(context)
+                    .colorScheme
+                    .surfaceVariant
+                    .withOpacity(0.5)),
             FractionallySizedBox(
               widthFactor: currentProgression,
               child: AnimatedContainer(
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary.withOpacity(0.5),
+                  color: Theme.of(context).colorScheme.primary.withOpacity(0.8),
                   borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(20),
                     bottomRight: Radius.circular(20),

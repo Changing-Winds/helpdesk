@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'issue.dart';
 
@@ -28,6 +28,7 @@ mixin _$Issue {
   DateTime get createdAt => throw _privateConstructorUsedError;
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   Criticity get criticity => throw _privateConstructorUsedError;
+  Product get product => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,7 +47,8 @@ abstract class $IssueCopyWith<$Res> {
       String? abstract,
       DateTime createdAt,
       DateTime? updatedAt,
-      Criticity criticity});
+      Criticity criticity,
+      Product product});
 }
 
 /// @nodoc
@@ -69,6 +71,7 @@ class _$IssueCopyWithImpl<$Res, $Val extends Issue>
     Object? createdAt = null,
     Object? updatedAt = freezed,
     Object? criticity = null,
+    Object? product = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -99,6 +102,10 @@ class _$IssueCopyWithImpl<$Res, $Val extends Issue>
           ? _value.criticity
           : criticity // ignore: cast_nullable_to_non_nullable
               as Criticity,
+      product: null == product
+          ? _value.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as Product,
     ) as $Val);
   }
 }
@@ -116,7 +123,8 @@ abstract class _$$_IssueCopyWith<$Res> implements $IssueCopyWith<$Res> {
       String? abstract,
       DateTime createdAt,
       DateTime? updatedAt,
-      Criticity criticity});
+      Criticity criticity,
+      Product product});
 }
 
 /// @nodoc
@@ -135,6 +143,7 @@ class __$$_IssueCopyWithImpl<$Res> extends _$IssueCopyWithImpl<$Res, _$_Issue>
     Object? createdAt = null,
     Object? updatedAt = freezed,
     Object? criticity = null,
+    Object? product = null,
   }) {
     return _then(_$_Issue(
       id: freezed == id
@@ -165,6 +174,10 @@ class __$$_IssueCopyWithImpl<$Res> extends _$IssueCopyWithImpl<$Res, _$_Issue>
           ? _value.criticity
           : criticity // ignore: cast_nullable_to_non_nullable
               as Criticity,
+      product: null == product
+          ? _value.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as Product,
     ));
   }
 }
@@ -179,7 +192,8 @@ class _$_Issue extends _Issue {
       this.abstract,
       required this.createdAt,
       this.updatedAt,
-      this.criticity = Criticity.minor})
+      this.criticity = Criticity.minor,
+      this.product = Product.flatguide})
       : super._();
 
   factory _$_Issue.fromJson(Map<String, dynamic> json) =>
@@ -201,10 +215,13 @@ class _$_Issue extends _Issue {
   @override
   @JsonKey()
   final Criticity criticity;
+  @override
+  @JsonKey()
+  final Product product;
 
   @override
   String toString() {
-    return 'Issue(id: $id, authorID: $authorID, title: $title, abstract: $abstract, createdAt: $createdAt, updatedAt: $updatedAt, criticity: $criticity)';
+    return 'Issue(id: $id, authorID: $authorID, title: $title, abstract: $abstract, createdAt: $createdAt, updatedAt: $updatedAt, criticity: $criticity, product: $product)';
   }
 
   @override
@@ -223,13 +240,14 @@ class _$_Issue extends _Issue {
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
             (identical(other.criticity, criticity) ||
-                other.criticity == criticity));
+                other.criticity == criticity) &&
+            (identical(other.product, product) || other.product == product));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, authorID, title, abstract,
-      createdAt, updatedAt, criticity);
+      createdAt, updatedAt, criticity, product);
 
   @JsonKey(ignore: true)
   @override
@@ -253,7 +271,8 @@ abstract class _Issue extends Issue implements Entity {
       final String? abstract,
       required final DateTime createdAt,
       final DateTime? updatedAt,
-      final Criticity criticity}) = _$_Issue;
+      final Criticity criticity,
+      final Product product}) = _$_Issue;
   _Issue._() : super._();
 
   factory _Issue.fromJson(Map<String, dynamic> json) = _$_Issue.fromJson;
@@ -273,6 +292,8 @@ abstract class _Issue extends Issue implements Entity {
   DateTime? get updatedAt;
   @override
   Criticity get criticity;
+  @override
+  Product get product;
   @override
   @JsonKey(ignore: true)
   _$$_IssueCopyWith<_$_Issue> get copyWith =>
