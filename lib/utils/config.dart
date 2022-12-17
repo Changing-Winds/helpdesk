@@ -6,6 +6,15 @@ import 'package:helpdesk/utils/failures.dart';
 import 'package:helpdesk/utils/usecases/usecases.dart';
 import 'package:yaml/yaml.dart';
 
+// This class allows to have paramters set externally to the app
+// in case I later want to provide this whole application as a
+// White Label packaged tool and want to allow companies using it to customize it.
+//
+// These paramaters are different from the settings the final user
+// may be choosing while using the app.
+//
+// A hosted URL can be used for Web Apps, or a file in the assets folder
+// can be used instead.
 class Config {
   late YamlMap config;
 
@@ -37,14 +46,6 @@ class Config {
 
   bool get centerHelpdeskName {
     return config['center-helpdesk-name'] ?? false;
-  }
-
-  String get apiSpecsLocation {
-    return config['api-specs-location'];
-  }
-
-  bool get allowDownloads {
-    return config['allow-downloads'] ?? false;
   }
 
   bool get requireSignIn {
