@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:helpdesk/design_system/design_system.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
@@ -5,6 +6,7 @@ import 'package:helpdesk/features/application/bloc/application_bloc.dart';
 import 'package:helpdesk/features/application/views/unknown_screen.dart';
 import 'package:helpdesk/features/authentication/authentication.dart';
 import 'package:helpdesk/features/home/views/home_screen.dart';
+import 'package:helpdesk/features/ticket/ticket_screen.dart';
 import 'package:helpdesk/repositories/connectivity_repository/connectivity_repository.dart';
 import 'package:helpdesk/utils/config.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +19,12 @@ class HelpdeskApp extends StatelessWidget {
     super.key,
     required this.config,
   });
+  // Contains basic UI, Behavior and Info needed
+  // to customise this app
   final Config config;
 
+  // Use of the router here will almow deep links
+  // or manually sharing urls of the tickets or comments in the web version
   final GoRouter _router = GoRouter(
     initialLocation: '/',
     routes: <GoRoute>[
@@ -28,29 +34,28 @@ class HelpdeskApp extends StatelessWidget {
           return const HomeScreen();
         },
       ),
-      // GoRoute(
-      //   path: '/api/:slug',
-      //   pageBuilder: (
-      //     BuildContext context,
-      //     GoRouterState state,
-      //   ) =>
-      //       CupertinoPage<void>(
-      //     key: state.pageKey,
-      //     child: ApiDocScreen(apiSlug: state.params['slug']!),
-      //   ),
-      // ),
-      // GoRoute(
-      //   path: '/api/:api/:tag/:method',
-      //   pageBuilder: (BuildContext context, GoRouterState state) =>
-      //       CupertinoPage<void>(
-      //           key: state.pageKey,
-      //           child: ApiDocScreen(
-      //             apiSlug: state.params['api']!,
-      //             tagSlug: state.params['tag']!,
-      //             methodSlug: state.params['method']!,
-      //           )),
-      //   // },
-      // ),
+      GoRoute(
+        path: '/ticket/:slug',
+        pageBuilder: (
+          BuildContext context,
+          GoRouterState state,
+        ) =>
+            CupertinoPage<void>(
+          key: state.pageKey,
+          child: TicketScreen(ticketSlug: state.params['slug']!),
+        ),
+      ),
+      GoRoute(
+        path: '/api/:api/:tag/:method',
+        pageBuilder: (BuildContext context, GoRouterState state) =>
+            CupertinoPage<void>(
+          key: state.pageKey,
+          child: TicketScreen(
+            ticketSlug: state.params['ticket']!,
+            commentSlug: state.params['comment']!,
+          ),
+        ),
+      ),
     ],
     errorBuilder: (context, state) => const UnknownScreen(),
   );
@@ -93,14 +98,13 @@ class HelpdeskApp extends StatelessWidget {
 
             switch (state.status) {
               case ApplicationStatus.ready:
-                return MaterialApp(
-                  // routerConfig: _router,
+                return MaterialApp.router(
+                  routerConfig: _router,
                   title: config.helpdeskName,
                   theme: lightTheme(),
                   darkTheme: darkTheme(),
                   localizationsDelegates: localizationDelegates,
                   supportedLocales: supportedLocales,
-                  home: const HomeScreen(),
                 );
 
               case ApplicationStatus.failed:
