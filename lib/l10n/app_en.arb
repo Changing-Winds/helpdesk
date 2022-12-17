@@ -7,9 +7,21 @@
   "@allOpenedTickets": {
     "description": "Name of the opened tickets screen"
   },
+  "application": "Application",
+  "@application": {
+    "description": "Application where the issue is spotted"
+  },
   "dashboard": "Dashboard",
   "@dashboard": {
     "description": "Name of the default home screen of the app"
+  },
+  "device": "Device",
+  "@device": {
+    "description": "Device used to detect issue"
+  },
+  "deviceSystem": "Device System",
+  "@deviceSystem": {
+    "description": "Device System used to detect issue"
   },
   "issueEnvironment": "Environment where the issue occured",
   "@issueEnvironment": {

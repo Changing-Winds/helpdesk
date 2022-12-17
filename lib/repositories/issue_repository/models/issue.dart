@@ -1,9 +1,8 @@
 // ignore_for_file: invalid_annotation_target
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:helpdesk/repositories/firestore_datasource/models/models.dart';
-import 'package:helpdesk/repositories/issue_repository/models/criticity.dart';
-import 'package:helpdesk/repositories/issue_repository/models/product.dart';
+import 'package:helpdesk/repositories/firestore_datasource/models/entity.dart';
+import 'package:helpdesk/repositories/issue_repository/models/models.dart';
 
 part 'issue.freezed.dart';
 part 'issue.g.dart';
@@ -22,6 +21,8 @@ class Issue with _$Issue {
     DateTime? updatedAt,
     @Default(Criticity.minor) Criticity criticity,
     @Default(Product.flatguide) Product product,
+    @Default(Application.adminApp) Application application,
+    @Default(Device.windowsDekstop) Device device,
   }) = _Issue;
 
   factory Issue.fromJson(Map<String, dynamic> json) => _$IssueFromJson(json);

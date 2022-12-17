@@ -22,6 +22,8 @@ mixin _$CreateTicketEvent {
     required TResult Function() nextStepRequested,
     required TResult Function() featureStepSaved,
     required TResult Function(Product product) productChanged,
+    required TResult Function(Application application) applicationChanged,
+    required TResult Function(Device device) deviceChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +32,8 @@ mixin _$CreateTicketEvent {
     TResult? Function()? nextStepRequested,
     TResult? Function()? featureStepSaved,
     TResult? Function(Product product)? productChanged,
+    TResult? Function(Application application)? applicationChanged,
+    TResult? Function(Device device)? deviceChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +42,8 @@ mixin _$CreateTicketEvent {
     TResult Function()? nextStepRequested,
     TResult Function()? featureStepSaved,
     TResult Function(Product product)? productChanged,
+    TResult Function(Application application)? applicationChanged,
+    TResult Function(Device device)? deviceChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +55,9 @@ mixin _$CreateTicketEvent {
     required TResult Function(_CreateTicketFeatureStepSaved value)
         featureStepSaved,
     required TResult Function(_CreateTicketProductChanged value) productChanged,
+    required TResult Function(_CreateTicketApplicationChanged value)
+        applicationChanged,
+    required TResult Function(_CreateTicketDeviceChanged value) deviceChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +66,9 @@ mixin _$CreateTicketEvent {
     TResult? Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult? Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
     TResult? Function(_CreateTicketProductChanged value)? productChanged,
+    TResult? Function(_CreateTicketApplicationChanged value)?
+        applicationChanged,
+    TResult? Function(_CreateTicketDeviceChanged value)? deviceChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +77,8 @@ mixin _$CreateTicketEvent {
     TResult Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
     TResult Function(_CreateTicketProductChanged value)? productChanged,
+    TResult Function(_CreateTicketApplicationChanged value)? applicationChanged,
+    TResult Function(_CreateTicketDeviceChanged value)? deviceChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -130,6 +144,8 @@ class _$_CreateTicketStarted implements _CreateTicketStarted {
     required TResult Function() nextStepRequested,
     required TResult Function() featureStepSaved,
     required TResult Function(Product product) productChanged,
+    required TResult Function(Application application) applicationChanged,
+    required TResult Function(Device device) deviceChanged,
   }) {
     return started();
   }
@@ -141,6 +157,8 @@ class _$_CreateTicketStarted implements _CreateTicketStarted {
     TResult? Function()? nextStepRequested,
     TResult? Function()? featureStepSaved,
     TResult? Function(Product product)? productChanged,
+    TResult? Function(Application application)? applicationChanged,
+    TResult? Function(Device device)? deviceChanged,
   }) {
     return started?.call();
   }
@@ -152,6 +170,8 @@ class _$_CreateTicketStarted implements _CreateTicketStarted {
     TResult Function()? nextStepRequested,
     TResult Function()? featureStepSaved,
     TResult Function(Product product)? productChanged,
+    TResult Function(Application application)? applicationChanged,
+    TResult Function(Device device)? deviceChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -169,6 +189,9 @@ class _$_CreateTicketStarted implements _CreateTicketStarted {
     required TResult Function(_CreateTicketFeatureStepSaved value)
         featureStepSaved,
     required TResult Function(_CreateTicketProductChanged value) productChanged,
+    required TResult Function(_CreateTicketApplicationChanged value)
+        applicationChanged,
+    required TResult Function(_CreateTicketDeviceChanged value) deviceChanged,
   }) {
     return started(this);
   }
@@ -180,6 +203,9 @@ class _$_CreateTicketStarted implements _CreateTicketStarted {
     TResult? Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult? Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
     TResult? Function(_CreateTicketProductChanged value)? productChanged,
+    TResult? Function(_CreateTicketApplicationChanged value)?
+        applicationChanged,
+    TResult? Function(_CreateTicketDeviceChanged value)? deviceChanged,
   }) {
     return started?.call(this);
   }
@@ -191,6 +217,8 @@ class _$_CreateTicketStarted implements _CreateTicketStarted {
     TResult Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
     TResult Function(_CreateTicketProductChanged value)? productChanged,
+    TResult Function(_CreateTicketApplicationChanged value)? applicationChanged,
+    TResult Function(_CreateTicketDeviceChanged value)? deviceChanged,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -251,6 +279,8 @@ class _$_CreateTicketNextStepRequested
     required TResult Function() nextStepRequested,
     required TResult Function() featureStepSaved,
     required TResult Function(Product product) productChanged,
+    required TResult Function(Application application) applicationChanged,
+    required TResult Function(Device device) deviceChanged,
   }) {
     return nextStepRequested();
   }
@@ -262,6 +292,8 @@ class _$_CreateTicketNextStepRequested
     TResult? Function()? nextStepRequested,
     TResult? Function()? featureStepSaved,
     TResult? Function(Product product)? productChanged,
+    TResult? Function(Application application)? applicationChanged,
+    TResult? Function(Device device)? deviceChanged,
   }) {
     return nextStepRequested?.call();
   }
@@ -273,6 +305,8 @@ class _$_CreateTicketNextStepRequested
     TResult Function()? nextStepRequested,
     TResult Function()? featureStepSaved,
     TResult Function(Product product)? productChanged,
+    TResult Function(Application application)? applicationChanged,
+    TResult Function(Device device)? deviceChanged,
     required TResult orElse(),
   }) {
     if (nextStepRequested != null) {
@@ -290,6 +324,9 @@ class _$_CreateTicketNextStepRequested
     required TResult Function(_CreateTicketFeatureStepSaved value)
         featureStepSaved,
     required TResult Function(_CreateTicketProductChanged value) productChanged,
+    required TResult Function(_CreateTicketApplicationChanged value)
+        applicationChanged,
+    required TResult Function(_CreateTicketDeviceChanged value) deviceChanged,
   }) {
     return nextStepRequested(this);
   }
@@ -301,6 +338,9 @@ class _$_CreateTicketNextStepRequested
     TResult? Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult? Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
     TResult? Function(_CreateTicketProductChanged value)? productChanged,
+    TResult? Function(_CreateTicketApplicationChanged value)?
+        applicationChanged,
+    TResult? Function(_CreateTicketDeviceChanged value)? deviceChanged,
   }) {
     return nextStepRequested?.call(this);
   }
@@ -312,6 +352,8 @@ class _$_CreateTicketNextStepRequested
     TResult Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
     TResult Function(_CreateTicketProductChanged value)? productChanged,
+    TResult Function(_CreateTicketApplicationChanged value)? applicationChanged,
+    TResult Function(_CreateTicketDeviceChanged value)? deviceChanged,
     required TResult orElse(),
   }) {
     if (nextStepRequested != null) {
@@ -372,6 +414,8 @@ class _$_CreateTicketFeatureStepSaved implements _CreateTicketFeatureStepSaved {
     required TResult Function() nextStepRequested,
     required TResult Function() featureStepSaved,
     required TResult Function(Product product) productChanged,
+    required TResult Function(Application application) applicationChanged,
+    required TResult Function(Device device) deviceChanged,
   }) {
     return featureStepSaved();
   }
@@ -383,6 +427,8 @@ class _$_CreateTicketFeatureStepSaved implements _CreateTicketFeatureStepSaved {
     TResult? Function()? nextStepRequested,
     TResult? Function()? featureStepSaved,
     TResult? Function(Product product)? productChanged,
+    TResult? Function(Application application)? applicationChanged,
+    TResult? Function(Device device)? deviceChanged,
   }) {
     return featureStepSaved?.call();
   }
@@ -394,6 +440,8 @@ class _$_CreateTicketFeatureStepSaved implements _CreateTicketFeatureStepSaved {
     TResult Function()? nextStepRequested,
     TResult Function()? featureStepSaved,
     TResult Function(Product product)? productChanged,
+    TResult Function(Application application)? applicationChanged,
+    TResult Function(Device device)? deviceChanged,
     required TResult orElse(),
   }) {
     if (featureStepSaved != null) {
@@ -411,6 +459,9 @@ class _$_CreateTicketFeatureStepSaved implements _CreateTicketFeatureStepSaved {
     required TResult Function(_CreateTicketFeatureStepSaved value)
         featureStepSaved,
     required TResult Function(_CreateTicketProductChanged value) productChanged,
+    required TResult Function(_CreateTicketApplicationChanged value)
+        applicationChanged,
+    required TResult Function(_CreateTicketDeviceChanged value) deviceChanged,
   }) {
     return featureStepSaved(this);
   }
@@ -422,6 +473,9 @@ class _$_CreateTicketFeatureStepSaved implements _CreateTicketFeatureStepSaved {
     TResult? Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult? Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
     TResult? Function(_CreateTicketProductChanged value)? productChanged,
+    TResult? Function(_CreateTicketApplicationChanged value)?
+        applicationChanged,
+    TResult? Function(_CreateTicketDeviceChanged value)? deviceChanged,
   }) {
     return featureStepSaved?.call(this);
   }
@@ -433,6 +487,8 @@ class _$_CreateTicketFeatureStepSaved implements _CreateTicketFeatureStepSaved {
     TResult Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
     TResult Function(_CreateTicketProductChanged value)? productChanged,
+    TResult Function(_CreateTicketApplicationChanged value)? applicationChanged,
+    TResult Function(_CreateTicketDeviceChanged value)? deviceChanged,
     required TResult orElse(),
   }) {
     if (featureStepSaved != null) {
@@ -518,6 +574,8 @@ class _$_CreateTicketProductChanged implements _CreateTicketProductChanged {
     required TResult Function() nextStepRequested,
     required TResult Function() featureStepSaved,
     required TResult Function(Product product) productChanged,
+    required TResult Function(Application application) applicationChanged,
+    required TResult Function(Device device) deviceChanged,
   }) {
     return productChanged(product);
   }
@@ -529,6 +587,8 @@ class _$_CreateTicketProductChanged implements _CreateTicketProductChanged {
     TResult? Function()? nextStepRequested,
     TResult? Function()? featureStepSaved,
     TResult? Function(Product product)? productChanged,
+    TResult? Function(Application application)? applicationChanged,
+    TResult? Function(Device device)? deviceChanged,
   }) {
     return productChanged?.call(product);
   }
@@ -540,6 +600,8 @@ class _$_CreateTicketProductChanged implements _CreateTicketProductChanged {
     TResult Function()? nextStepRequested,
     TResult Function()? featureStepSaved,
     TResult Function(Product product)? productChanged,
+    TResult Function(Application application)? applicationChanged,
+    TResult Function(Device device)? deviceChanged,
     required TResult orElse(),
   }) {
     if (productChanged != null) {
@@ -557,6 +619,9 @@ class _$_CreateTicketProductChanged implements _CreateTicketProductChanged {
     required TResult Function(_CreateTicketFeatureStepSaved value)
         featureStepSaved,
     required TResult Function(_CreateTicketProductChanged value) productChanged,
+    required TResult Function(_CreateTicketApplicationChanged value)
+        applicationChanged,
+    required TResult Function(_CreateTicketDeviceChanged value) deviceChanged,
   }) {
     return productChanged(this);
   }
@@ -568,6 +633,9 @@ class _$_CreateTicketProductChanged implements _CreateTicketProductChanged {
     TResult? Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult? Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
     TResult? Function(_CreateTicketProductChanged value)? productChanged,
+    TResult? Function(_CreateTicketApplicationChanged value)?
+        applicationChanged,
+    TResult? Function(_CreateTicketDeviceChanged value)? deviceChanged,
   }) {
     return productChanged?.call(this);
   }
@@ -579,6 +647,8 @@ class _$_CreateTicketProductChanged implements _CreateTicketProductChanged {
     TResult Function(_CreateTicketNextStepRequested value)? nextStepRequested,
     TResult Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
     TResult Function(_CreateTicketProductChanged value)? productChanged,
+    TResult Function(_CreateTicketApplicationChanged value)? applicationChanged,
+    TResult Function(_CreateTicketDeviceChanged value)? deviceChanged,
     required TResult orElse(),
   }) {
     if (productChanged != null) {
@@ -595,6 +665,339 @@ abstract class _CreateTicketProductChanged implements CreateTicketEvent {
   Product get product;
   @JsonKey(ignore: true)
   _$$_CreateTicketProductChangedCopyWith<_$_CreateTicketProductChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_CreateTicketApplicationChangedCopyWith<$Res> {
+  factory _$$_CreateTicketApplicationChangedCopyWith(
+          _$_CreateTicketApplicationChanged value,
+          $Res Function(_$_CreateTicketApplicationChanged) then) =
+      __$$_CreateTicketApplicationChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Application application});
+}
+
+/// @nodoc
+class __$$_CreateTicketApplicationChangedCopyWithImpl<$Res>
+    extends _$CreateTicketEventCopyWithImpl<$Res,
+        _$_CreateTicketApplicationChanged>
+    implements _$$_CreateTicketApplicationChangedCopyWith<$Res> {
+  __$$_CreateTicketApplicationChangedCopyWithImpl(
+      _$_CreateTicketApplicationChanged _value,
+      $Res Function(_$_CreateTicketApplicationChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? application = null,
+  }) {
+    return _then(_$_CreateTicketApplicationChanged(
+      null == application
+          ? _value.application
+          : application // ignore: cast_nullable_to_non_nullable
+              as Application,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CreateTicketApplicationChanged
+    implements _CreateTicketApplicationChanged {
+  const _$_CreateTicketApplicationChanged(this.application);
+
+  @override
+  final Application application;
+
+  @override
+  String toString() {
+    return 'CreateTicketEvent.applicationChanged(application: $application)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CreateTicketApplicationChanged &&
+            (identical(other.application, application) ||
+                other.application == application));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, application);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CreateTicketApplicationChangedCopyWith<_$_CreateTicketApplicationChanged>
+      get copyWith => __$$_CreateTicketApplicationChangedCopyWithImpl<
+          _$_CreateTicketApplicationChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() nextStepRequested,
+    required TResult Function() featureStepSaved,
+    required TResult Function(Product product) productChanged,
+    required TResult Function(Application application) applicationChanged,
+    required TResult Function(Device device) deviceChanged,
+  }) {
+    return applicationChanged(application);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? nextStepRequested,
+    TResult? Function()? featureStepSaved,
+    TResult? Function(Product product)? productChanged,
+    TResult? Function(Application application)? applicationChanged,
+    TResult? Function(Device device)? deviceChanged,
+  }) {
+    return applicationChanged?.call(application);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? nextStepRequested,
+    TResult Function()? featureStepSaved,
+    TResult Function(Product product)? productChanged,
+    TResult Function(Application application)? applicationChanged,
+    TResult Function(Device device)? deviceChanged,
+    required TResult orElse(),
+  }) {
+    if (applicationChanged != null) {
+      return applicationChanged(application);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CreateTicketStarted value) started,
+    required TResult Function(_CreateTicketNextStepRequested value)
+        nextStepRequested,
+    required TResult Function(_CreateTicketFeatureStepSaved value)
+        featureStepSaved,
+    required TResult Function(_CreateTicketProductChanged value) productChanged,
+    required TResult Function(_CreateTicketApplicationChanged value)
+        applicationChanged,
+    required TResult Function(_CreateTicketDeviceChanged value) deviceChanged,
+  }) {
+    return applicationChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CreateTicketStarted value)? started,
+    TResult? Function(_CreateTicketNextStepRequested value)? nextStepRequested,
+    TResult? Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult? Function(_CreateTicketProductChanged value)? productChanged,
+    TResult? Function(_CreateTicketApplicationChanged value)?
+        applicationChanged,
+    TResult? Function(_CreateTicketDeviceChanged value)? deviceChanged,
+  }) {
+    return applicationChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CreateTicketStarted value)? started,
+    TResult Function(_CreateTicketNextStepRequested value)? nextStepRequested,
+    TResult Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult Function(_CreateTicketProductChanged value)? productChanged,
+    TResult Function(_CreateTicketApplicationChanged value)? applicationChanged,
+    TResult Function(_CreateTicketDeviceChanged value)? deviceChanged,
+    required TResult orElse(),
+  }) {
+    if (applicationChanged != null) {
+      return applicationChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreateTicketApplicationChanged implements CreateTicketEvent {
+  const factory _CreateTicketApplicationChanged(final Application application) =
+      _$_CreateTicketApplicationChanged;
+
+  Application get application;
+  @JsonKey(ignore: true)
+  _$$_CreateTicketApplicationChangedCopyWith<_$_CreateTicketApplicationChanged>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_CreateTicketDeviceChangedCopyWith<$Res> {
+  factory _$$_CreateTicketDeviceChangedCopyWith(
+          _$_CreateTicketDeviceChanged value,
+          $Res Function(_$_CreateTicketDeviceChanged) then) =
+      __$$_CreateTicketDeviceChangedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Device device});
+}
+
+/// @nodoc
+class __$$_CreateTicketDeviceChangedCopyWithImpl<$Res>
+    extends _$CreateTicketEventCopyWithImpl<$Res, _$_CreateTicketDeviceChanged>
+    implements _$$_CreateTicketDeviceChangedCopyWith<$Res> {
+  __$$_CreateTicketDeviceChangedCopyWithImpl(
+      _$_CreateTicketDeviceChanged _value,
+      $Res Function(_$_CreateTicketDeviceChanged) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? device = null,
+  }) {
+    return _then(_$_CreateTicketDeviceChanged(
+      null == device
+          ? _value.device
+          : device // ignore: cast_nullable_to_non_nullable
+              as Device,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CreateTicketDeviceChanged implements _CreateTicketDeviceChanged {
+  const _$_CreateTicketDeviceChanged(this.device);
+
+  @override
+  final Device device;
+
+  @override
+  String toString() {
+    return 'CreateTicketEvent.deviceChanged(device: $device)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CreateTicketDeviceChanged &&
+            (identical(other.device, device) || other.device == device));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, device);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CreateTicketDeviceChangedCopyWith<_$_CreateTicketDeviceChanged>
+      get copyWith => __$$_CreateTicketDeviceChangedCopyWithImpl<
+          _$_CreateTicketDeviceChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() nextStepRequested,
+    required TResult Function() featureStepSaved,
+    required TResult Function(Product product) productChanged,
+    required TResult Function(Application application) applicationChanged,
+    required TResult Function(Device device) deviceChanged,
+  }) {
+    return deviceChanged(device);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? nextStepRequested,
+    TResult? Function()? featureStepSaved,
+    TResult? Function(Product product)? productChanged,
+    TResult? Function(Application application)? applicationChanged,
+    TResult? Function(Device device)? deviceChanged,
+  }) {
+    return deviceChanged?.call(device);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? nextStepRequested,
+    TResult Function()? featureStepSaved,
+    TResult Function(Product product)? productChanged,
+    TResult Function(Application application)? applicationChanged,
+    TResult Function(Device device)? deviceChanged,
+    required TResult orElse(),
+  }) {
+    if (deviceChanged != null) {
+      return deviceChanged(device);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CreateTicketStarted value) started,
+    required TResult Function(_CreateTicketNextStepRequested value)
+        nextStepRequested,
+    required TResult Function(_CreateTicketFeatureStepSaved value)
+        featureStepSaved,
+    required TResult Function(_CreateTicketProductChanged value) productChanged,
+    required TResult Function(_CreateTicketApplicationChanged value)
+        applicationChanged,
+    required TResult Function(_CreateTicketDeviceChanged value) deviceChanged,
+  }) {
+    return deviceChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CreateTicketStarted value)? started,
+    TResult? Function(_CreateTicketNextStepRequested value)? nextStepRequested,
+    TResult? Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult? Function(_CreateTicketProductChanged value)? productChanged,
+    TResult? Function(_CreateTicketApplicationChanged value)?
+        applicationChanged,
+    TResult? Function(_CreateTicketDeviceChanged value)? deviceChanged,
+  }) {
+    return deviceChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CreateTicketStarted value)? started,
+    TResult Function(_CreateTicketNextStepRequested value)? nextStepRequested,
+    TResult Function(_CreateTicketFeatureStepSaved value)? featureStepSaved,
+    TResult Function(_CreateTicketProductChanged value)? productChanged,
+    TResult Function(_CreateTicketApplicationChanged value)? applicationChanged,
+    TResult Function(_CreateTicketDeviceChanged value)? deviceChanged,
+    required TResult orElse(),
+  }) {
+    if (deviceChanged != null) {
+      return deviceChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreateTicketDeviceChanged implements CreateTicketEvent {
+  const factory _CreateTicketDeviceChanged(final Device device) =
+      _$_CreateTicketDeviceChanged;
+
+  Device get device;
+  @JsonKey(ignore: true)
+  _$$_CreateTicketDeviceChangedCopyWith<_$_CreateTicketDeviceChanged>
       get copyWith => throw _privateConstructorUsedError;
 }
 

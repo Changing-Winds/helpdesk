@@ -1,4 +1,4 @@
-enum Entity {
+enum PlatformEntity {
   application('Application', 'Candidature', '4a6ff18cc4cc42bb8e4ab95157233487'),
   availabilities(
       'Availabilities', 'Disponibilité', '70eab40324734a48b7832ca5900e17cf'),
@@ -21,7 +21,7 @@ enum Entity {
   final String nameFr;
   final String id;
 
-  const Entity(this.name, this.nameFr, this.id);
+  const PlatformEntity(this.name, this.nameFr, this.id);
   @override
-  String toString() => 'Entity(Name: $name, NameFR: $nameFr, ID: $id )';
+  String toString() => 'PlatformEntity(Name: $name, NameFR: $nameFr, ID: $id )';
 }

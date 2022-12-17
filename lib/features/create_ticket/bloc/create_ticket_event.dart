@@ -9,4 +9,8 @@ class CreateTicketEvent with _$CreateTicketEvent {
       _CreateTicketFeatureStepSaved;
   const factory CreateTicketEvent.productChanged(Product product) =
       _CreateTicketProductChanged;
+  const factory CreateTicketEvent.applicationChanged(Application application) =
+      _CreateTicketApplicationChanged;
+  const factory CreateTicketEvent.deviceChanged(Device device) =
+      _CreateTicketDeviceChanged;
 }

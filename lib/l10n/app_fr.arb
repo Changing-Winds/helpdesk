@@ -1,7 +1,10 @@
 {
   "affectedProduct": "Produit affecté",
   "allOpenedTickets": "Tous les tickets ouverts",
+  "application": "Application",
   "dashboard": "Tableau de bord",
+  "device": "Appareil",
+  "deviceSystem": "Système",
   "impactedFeature": "Fonctionnalité impactée",
   "issueEnvironment": "Environnement où le problème a été constaté",
   "issueInDetails": "Détails du problème rencontré",
