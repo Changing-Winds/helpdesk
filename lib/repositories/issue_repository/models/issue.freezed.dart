@@ -29,6 +29,8 @@ mixin _$Issue {
   DateTime? get updatedAt => throw _privateConstructorUsedError;
   Criticity get criticity => throw _privateConstructorUsedError;
   Product get product => throw _privateConstructorUsedError;
+  Application get application => throw _privateConstructorUsedError;
+  Device get device => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,7 +50,9 @@ abstract class $IssueCopyWith<$Res> {
       DateTime createdAt,
       DateTime? updatedAt,
       Criticity criticity,
-      Product product});
+      Product product,
+      Application application,
+      Device device});
 }
 
 /// @nodoc
@@ -72,6 +76,8 @@ class _$IssueCopyWithImpl<$Res, $Val extends Issue>
     Object? updatedAt = freezed,
     Object? criticity = null,
     Object? product = null,
+    Object? application = null,
+    Object? device = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -106,6 +112,14 @@ class _$IssueCopyWithImpl<$Res, $Val extends Issue>
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
               as Product,
+      application: null == application
+          ? _value.application
+          : application // ignore: cast_nullable_to_non_nullable
+              as Application,
+      device: null == device
+          ? _value.device
+          : device // ignore: cast_nullable_to_non_nullable
+              as Device,
     ) as $Val);
   }
 }
@@ -124,7 +138,9 @@ abstract class _$$_IssueCopyWith<$Res> implements $IssueCopyWith<$Res> {
       DateTime createdAt,
       DateTime? updatedAt,
       Criticity criticity,
-      Product product});
+      Product product,
+      Application application,
+      Device device});
 }
 
 /// @nodoc
@@ -144,6 +160,8 @@ class __$$_IssueCopyWithImpl<$Res> extends _$IssueCopyWithImpl<$Res, _$_Issue>
     Object? updatedAt = freezed,
     Object? criticity = null,
     Object? product = null,
+    Object? application = null,
+    Object? device = null,
   }) {
     return _then(_$_Issue(
       id: freezed == id
@@ -178,6 +196,14 @@ class __$$_IssueCopyWithImpl<$Res> extends _$IssueCopyWithImpl<$Res, _$_Issue>
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
               as Product,
+      application: null == application
+          ? _value.application
+          : application // ignore: cast_nullable_to_non_nullable
+              as Application,
+      device: null == device
+          ? _value.device
+          : device // ignore: cast_nullable_to_non_nullable
+              as Device,
     ));
   }
 }
@@ -193,7 +219,9 @@ class _$_Issue extends _Issue {
       required this.createdAt,
       this.updatedAt,
       this.criticity = Criticity.minor,
-      this.product = Product.flatguide})
+      this.product = Product.flatguide,
+      this.application = Application.adminApp,
+      this.device = Device.windowsDekstop})
       : super._();
 
   factory _$_Issue.fromJson(Map<String, dynamic> json) =>
@@ -218,10 +246,16 @@ class _$_Issue extends _Issue {
   @override
   @JsonKey()
   final Product product;
+  @override
+  @JsonKey()
+  final Application application;
+  @override
+  @JsonKey()
+  final Device device;
 
   @override
   String toString() {
-    return 'Issue(id: $id, authorID: $authorID, title: $title, abstract: $abstract, createdAt: $createdAt, updatedAt: $updatedAt, criticity: $criticity, product: $product)';
+    return 'Issue(id: $id, authorID: $authorID, title: $title, abstract: $abstract, createdAt: $createdAt, updatedAt: $updatedAt, criticity: $criticity, product: $product, application: $application, device: $device)';
   }
 
   @override
@@ -241,13 +275,16 @@ class _$_Issue extends _Issue {
                 other.updatedAt == updatedAt) &&
             (identical(other.criticity, criticity) ||
                 other.criticity == criticity) &&
-            (identical(other.product, product) || other.product == product));
+            (identical(other.product, product) || other.product == product) &&
+            (identical(other.application, application) ||
+                other.application == application) &&
+            (identical(other.device, device) || other.device == device));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, authorID, title, abstract,
-      createdAt, updatedAt, criticity, product);
+      createdAt, updatedAt, criticity, product, application, device);
 
   @JsonKey(ignore: true)
   @override
@@ -272,7 +309,9 @@ abstract class _Issue extends Issue implements Entity {
       required final DateTime createdAt,
       final DateTime? updatedAt,
       final Criticity criticity,
-      final Product product}) = _$_Issue;
+      final Product product,
+      final Application application,
+      final Device device}) = _$_Issue;
   _Issue._() : super._();
 
   factory _Issue.fromJson(Map<String, dynamic> json) = _$_Issue.fromJson;
@@ -294,6 +333,10 @@ abstract class _Issue extends Issue implements Entity {
   Criticity get criticity;
   @override
   Product get product;
+  @override
+  Application get application;
+  @override
+  Device get device;
   @override
   @JsonKey(ignore: true)
   _$$_IssueCopyWith<_$_Issue> get copyWith =>
