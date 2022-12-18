@@ -29,6 +29,13 @@
             {
               "client_id": "824508506748-2kderb22n34ssp13cirjcksb460pjab3.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "824508506748-eh555duqi4sp88gvc5vc5s8ep8tf2db3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.helpdesk"
+              }
             }
           ]
         }

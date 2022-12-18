@@ -11,6 +11,22 @@
   "@application": {
     "description": "Application where the issue is spotted"
   },
+  "authenticationChecking": "Checking Authentication...",
+  "@authenticationChecking": {
+    "description": "Loading message when checking authentication status"
+  },
+  "authenticationUnauthenticatedErrorTitle": "We were not able to authenticate you",
+  "@authenticationUnauthenticatedErrorTitle": {
+    "description": "Loading message when checking authentication status"
+  },
+  "authenticationUnauthenticatedErrorExplanation": "Please make sure pop windows are allowed.\n This application is only accessible for people with an email registered to the {domain} domain.",
+  "@authenticationUnauthenticatedErrorExplanation": {
+    "description": "Loading message when checking authentication status",
+    "type": "text",
+    "placeholders": {
+      "domain": {}
+    }
+  },
   "dashboard": "Dashboard",
   "@dashboard": {
     "description": "Name of the default home screen of the app"

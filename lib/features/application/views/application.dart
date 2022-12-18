@@ -3,9 +3,9 @@ import 'package:helpdesk/design_system/design_system.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:helpdesk/features/application/bloc/application_bloc.dart';
+import 'package:helpdesk/features/application/views/application_screen.dart';
 import 'package:helpdesk/features/application/views/unknown_screen.dart';
 import 'package:helpdesk/features/authentication/authentication.dart';
-import 'package:helpdesk/features/home/views/home_screen.dart';
 import 'package:helpdesk/features/ticket/ticket_screen.dart';
 import 'package:helpdesk/repositories/connectivity_repository/connectivity_repository.dart';
 import 'package:helpdesk/utils/config.dart';
@@ -31,7 +31,7 @@ class HelpdeskApp extends StatelessWidget {
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return const HomeScreen();
+          return const ApplicationScreen();
         },
       ),
       GoRoute(
@@ -42,11 +42,13 @@ class HelpdeskApp extends StatelessWidget {
         ) =>
             CupertinoPage<void>(
           key: state.pageKey,
-          child: TicketScreen(ticketSlug: state.params['slug']!),
+          child: TicketScreen(
+            ticketSlug: state.params['slug']!,
+          ),
         ),
       ),
       GoRoute(
-        path: '/api/:api/:tag/:method',
+        path: '/ticket/:ticket/:comment',
         pageBuilder: (BuildContext context, GoRouterState state) =>
             CupertinoPage<void>(
           key: state.pageKey,
@@ -83,12 +85,17 @@ class HelpdeskApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider<AuthenticationBloc>(
-              lazy: false,
-              create: (BuildContext context) =>
-                  AuthenticationBloc(config)..add(AuthenticationInited())),
+            lazy: false,
+            create: (BuildContext context) => AuthenticationBloc(config)
+              ..add(
+                AuthenticationInited(),
+              ), // We are asking the App to silently log in the user
+          ),
           BlocProvider<ApplicationBloc>(
-            create: (context) =>
-                ApplicationBloc(config)..add(const ApplicationEvent.started()),
+            create: (context) => ApplicationBloc(config)
+              ..add(
+                const ApplicationEvent.started(),
+              ),
             lazy: false,
           ),
         ],

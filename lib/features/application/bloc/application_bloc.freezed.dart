@@ -19,28 +19,25 @@ mixin _$ApplicationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool showAsManyPages) navigationBehaviorChanged,
     required TResult Function(bool shouldDrawerBeVisible)
         drawerVisibilityChanged,
-    required TResult Function(ApiDoc doc) apiSelected,
+    required TResult Function(int tab) tabSelected,
     required TResult Function() goHome,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(bool showAsManyPages)? navigationBehaviorChanged,
     TResult? Function(bool shouldDrawerBeVisible)? drawerVisibilityChanged,
-    TResult? Function(ApiDoc doc)? apiSelected,
+    TResult? Function(int tab)? tabSelected,
     TResult? Function()? goHome,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool showAsManyPages)? navigationBehaviorChanged,
     TResult Function(bool shouldDrawerBeVisible)? drawerVisibilityChanged,
-    TResult Function(ApiDoc doc)? apiSelected,
+    TResult Function(int tab)? tabSelected,
     TResult Function()? goHome,
     required TResult orElse(),
   }) =>
@@ -48,33 +45,27 @@ mixin _$ApplicationEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ApplicationStarted value) started,
-    required TResult Function(_ApplicationNavigationBehaviorChanged value)
-        navigationBehaviorChanged,
     required TResult Function(_ApplicationDrawerVisibilityChanged value)
         drawerVisibilityChanged,
-    required TResult Function(_ApplicationApiSelected value) apiSelected,
+    required TResult Function(_ApplicationTabSelected value) tabSelected,
     required TResult Function(_ApplicationGoHome value) goHome,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ApplicationStarted value)? started,
-    TResult? Function(_ApplicationNavigationBehaviorChanged value)?
-        navigationBehaviorChanged,
     TResult? Function(_ApplicationDrawerVisibilityChanged value)?
         drawerVisibilityChanged,
-    TResult? Function(_ApplicationApiSelected value)? apiSelected,
+    TResult? Function(_ApplicationTabSelected value)? tabSelected,
     TResult? Function(_ApplicationGoHome value)? goHome,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ApplicationStarted value)? started,
-    TResult Function(_ApplicationNavigationBehaviorChanged value)?
-        navigationBehaviorChanged,
     TResult Function(_ApplicationDrawerVisibilityChanged value)?
         drawerVisibilityChanged,
-    TResult Function(_ApplicationApiSelected value)? apiSelected,
+    TResult Function(_ApplicationTabSelected value)? tabSelected,
     TResult Function(_ApplicationGoHome value)? goHome,
     required TResult orElse(),
   }) =>
@@ -138,10 +129,9 @@ class _$_ApplicationStarted implements _ApplicationStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool showAsManyPages) navigationBehaviorChanged,
     required TResult Function(bool shouldDrawerBeVisible)
         drawerVisibilityChanged,
-    required TResult Function(ApiDoc doc) apiSelected,
+    required TResult Function(int tab) tabSelected,
     required TResult Function() goHome,
   }) {
     return started();
@@ -151,9 +141,8 @@ class _$_ApplicationStarted implements _ApplicationStarted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(bool showAsManyPages)? navigationBehaviorChanged,
     TResult? Function(bool shouldDrawerBeVisible)? drawerVisibilityChanged,
-    TResult? Function(ApiDoc doc)? apiSelected,
+    TResult? Function(int tab)? tabSelected,
     TResult? Function()? goHome,
   }) {
     return started?.call();
@@ -163,9 +152,8 @@ class _$_ApplicationStarted implements _ApplicationStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool showAsManyPages)? navigationBehaviorChanged,
     TResult Function(bool shouldDrawerBeVisible)? drawerVisibilityChanged,
-    TResult Function(ApiDoc doc)? apiSelected,
+    TResult Function(int tab)? tabSelected,
     TResult Function()? goHome,
     required TResult orElse(),
   }) {
@@ -179,11 +167,9 @@ class _$_ApplicationStarted implements _ApplicationStarted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ApplicationStarted value) started,
-    required TResult Function(_ApplicationNavigationBehaviorChanged value)
-        navigationBehaviorChanged,
     required TResult Function(_ApplicationDrawerVisibilityChanged value)
         drawerVisibilityChanged,
-    required TResult Function(_ApplicationApiSelected value) apiSelected,
+    required TResult Function(_ApplicationTabSelected value) tabSelected,
     required TResult Function(_ApplicationGoHome value) goHome,
   }) {
     return started(this);
@@ -193,11 +179,9 @@ class _$_ApplicationStarted implements _ApplicationStarted {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ApplicationStarted value)? started,
-    TResult? Function(_ApplicationNavigationBehaviorChanged value)?
-        navigationBehaviorChanged,
     TResult? Function(_ApplicationDrawerVisibilityChanged value)?
         drawerVisibilityChanged,
-    TResult? Function(_ApplicationApiSelected value)? apiSelected,
+    TResult? Function(_ApplicationTabSelected value)? tabSelected,
     TResult? Function(_ApplicationGoHome value)? goHome,
   }) {
     return started?.call(this);
@@ -207,11 +191,9 @@ class _$_ApplicationStarted implements _ApplicationStarted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ApplicationStarted value)? started,
-    TResult Function(_ApplicationNavigationBehaviorChanged value)?
-        navigationBehaviorChanged,
     TResult Function(_ApplicationDrawerVisibilityChanged value)?
         drawerVisibilityChanged,
-    TResult Function(_ApplicationApiSelected value)? apiSelected,
+    TResult Function(_ApplicationTabSelected value)? tabSelected,
     TResult Function(_ApplicationGoHome value)? goHome,
     required TResult orElse(),
   }) {
@@ -224,174 +206,6 @@ class _$_ApplicationStarted implements _ApplicationStarted {
 
 abstract class _ApplicationStarted implements ApplicationEvent {
   const factory _ApplicationStarted() = _$_ApplicationStarted;
-}
-
-/// @nodoc
-abstract class _$$_ApplicationNavigationBehaviorChangedCopyWith<$Res> {
-  factory _$$_ApplicationNavigationBehaviorChangedCopyWith(
-          _$_ApplicationNavigationBehaviorChanged value,
-          $Res Function(_$_ApplicationNavigationBehaviorChanged) then) =
-      __$$_ApplicationNavigationBehaviorChangedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool showAsManyPages});
-}
-
-/// @nodoc
-class __$$_ApplicationNavigationBehaviorChangedCopyWithImpl<$Res>
-    extends _$ApplicationEventCopyWithImpl<$Res,
-        _$_ApplicationNavigationBehaviorChanged>
-    implements _$$_ApplicationNavigationBehaviorChangedCopyWith<$Res> {
-  __$$_ApplicationNavigationBehaviorChangedCopyWithImpl(
-      _$_ApplicationNavigationBehaviorChanged _value,
-      $Res Function(_$_ApplicationNavigationBehaviorChanged) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? showAsManyPages = null,
-  }) {
-    return _then(_$_ApplicationNavigationBehaviorChanged(
-      null == showAsManyPages
-          ? _value.showAsManyPages
-          : showAsManyPages // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_ApplicationNavigationBehaviorChanged
-    implements _ApplicationNavigationBehaviorChanged {
-  const _$_ApplicationNavigationBehaviorChanged(this.showAsManyPages);
-
-  @override
-  final bool showAsManyPages;
-
-  @override
-  String toString() {
-    return 'ApplicationEvent.navigationBehaviorChanged(showAsManyPages: $showAsManyPages)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_ApplicationNavigationBehaviorChanged &&
-            (identical(other.showAsManyPages, showAsManyPages) ||
-                other.showAsManyPages == showAsManyPages));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, showAsManyPages);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_ApplicationNavigationBehaviorChangedCopyWith<
-          _$_ApplicationNavigationBehaviorChanged>
-      get copyWith => __$$_ApplicationNavigationBehaviorChangedCopyWithImpl<
-          _$_ApplicationNavigationBehaviorChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(bool showAsManyPages) navigationBehaviorChanged,
-    required TResult Function(bool shouldDrawerBeVisible)
-        drawerVisibilityChanged,
-    required TResult Function(ApiDoc doc) apiSelected,
-    required TResult Function() goHome,
-  }) {
-    return navigationBehaviorChanged(showAsManyPages);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(bool showAsManyPages)? navigationBehaviorChanged,
-    TResult? Function(bool shouldDrawerBeVisible)? drawerVisibilityChanged,
-    TResult? Function(ApiDoc doc)? apiSelected,
-    TResult? Function()? goHome,
-  }) {
-    return navigationBehaviorChanged?.call(showAsManyPages);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(bool showAsManyPages)? navigationBehaviorChanged,
-    TResult Function(bool shouldDrawerBeVisible)? drawerVisibilityChanged,
-    TResult Function(ApiDoc doc)? apiSelected,
-    TResult Function()? goHome,
-    required TResult orElse(),
-  }) {
-    if (navigationBehaviorChanged != null) {
-      return navigationBehaviorChanged(showAsManyPages);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ApplicationStarted value) started,
-    required TResult Function(_ApplicationNavigationBehaviorChanged value)
-        navigationBehaviorChanged,
-    required TResult Function(_ApplicationDrawerVisibilityChanged value)
-        drawerVisibilityChanged,
-    required TResult Function(_ApplicationApiSelected value) apiSelected,
-    required TResult Function(_ApplicationGoHome value) goHome,
-  }) {
-    return navigationBehaviorChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ApplicationStarted value)? started,
-    TResult? Function(_ApplicationNavigationBehaviorChanged value)?
-        navigationBehaviorChanged,
-    TResult? Function(_ApplicationDrawerVisibilityChanged value)?
-        drawerVisibilityChanged,
-    TResult? Function(_ApplicationApiSelected value)? apiSelected,
-    TResult? Function(_ApplicationGoHome value)? goHome,
-  }) {
-    return navigationBehaviorChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ApplicationStarted value)? started,
-    TResult Function(_ApplicationNavigationBehaviorChanged value)?
-        navigationBehaviorChanged,
-    TResult Function(_ApplicationDrawerVisibilityChanged value)?
-        drawerVisibilityChanged,
-    TResult Function(_ApplicationApiSelected value)? apiSelected,
-    TResult Function(_ApplicationGoHome value)? goHome,
-    required TResult orElse(),
-  }) {
-    if (navigationBehaviorChanged != null) {
-      return navigationBehaviorChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ApplicationNavigationBehaviorChanged
-    implements ApplicationEvent {
-  const factory _ApplicationNavigationBehaviorChanged(
-      final bool showAsManyPages) = _$_ApplicationNavigationBehaviorChanged;
-
-  bool get showAsManyPages;
-  @JsonKey(ignore: true)
-  _$$_ApplicationNavigationBehaviorChangedCopyWith<
-          _$_ApplicationNavigationBehaviorChanged>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -466,10 +280,9 @@ class _$_ApplicationDrawerVisibilityChanged
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool showAsManyPages) navigationBehaviorChanged,
     required TResult Function(bool shouldDrawerBeVisible)
         drawerVisibilityChanged,
-    required TResult Function(ApiDoc doc) apiSelected,
+    required TResult Function(int tab) tabSelected,
     required TResult Function() goHome,
   }) {
     return drawerVisibilityChanged(shouldDrawerBeVisible);
@@ -479,9 +292,8 @@ class _$_ApplicationDrawerVisibilityChanged
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(bool showAsManyPages)? navigationBehaviorChanged,
     TResult? Function(bool shouldDrawerBeVisible)? drawerVisibilityChanged,
-    TResult? Function(ApiDoc doc)? apiSelected,
+    TResult? Function(int tab)? tabSelected,
     TResult? Function()? goHome,
   }) {
     return drawerVisibilityChanged?.call(shouldDrawerBeVisible);
@@ -491,9 +303,8 @@ class _$_ApplicationDrawerVisibilityChanged
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool showAsManyPages)? navigationBehaviorChanged,
     TResult Function(bool shouldDrawerBeVisible)? drawerVisibilityChanged,
-    TResult Function(ApiDoc doc)? apiSelected,
+    TResult Function(int tab)? tabSelected,
     TResult Function()? goHome,
     required TResult orElse(),
   }) {
@@ -507,11 +318,9 @@ class _$_ApplicationDrawerVisibilityChanged
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ApplicationStarted value) started,
-    required TResult Function(_ApplicationNavigationBehaviorChanged value)
-        navigationBehaviorChanged,
     required TResult Function(_ApplicationDrawerVisibilityChanged value)
         drawerVisibilityChanged,
-    required TResult Function(_ApplicationApiSelected value) apiSelected,
+    required TResult Function(_ApplicationTabSelected value) tabSelected,
     required TResult Function(_ApplicationGoHome value) goHome,
   }) {
     return drawerVisibilityChanged(this);
@@ -521,11 +330,9 @@ class _$_ApplicationDrawerVisibilityChanged
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ApplicationStarted value)? started,
-    TResult? Function(_ApplicationNavigationBehaviorChanged value)?
-        navigationBehaviorChanged,
     TResult? Function(_ApplicationDrawerVisibilityChanged value)?
         drawerVisibilityChanged,
-    TResult? Function(_ApplicationApiSelected value)? apiSelected,
+    TResult? Function(_ApplicationTabSelected value)? tabSelected,
     TResult? Function(_ApplicationGoHome value)? goHome,
   }) {
     return drawerVisibilityChanged?.call(this);
@@ -535,11 +342,9 @@ class _$_ApplicationDrawerVisibilityChanged
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ApplicationStarted value)? started,
-    TResult Function(_ApplicationNavigationBehaviorChanged value)?
-        navigationBehaviorChanged,
     TResult Function(_ApplicationDrawerVisibilityChanged value)?
         drawerVisibilityChanged,
-    TResult Function(_ApplicationApiSelected value)? apiSelected,
+    TResult Function(_ApplicationTabSelected value)? tabSelected,
     TResult Function(_ApplicationGoHome value)? goHome,
     required TResult orElse(),
   }) {
@@ -562,104 +367,101 @@ abstract class _ApplicationDrawerVisibilityChanged implements ApplicationEvent {
 }
 
 /// @nodoc
-abstract class _$$_ApplicationApiSelectedCopyWith<$Res> {
-  factory _$$_ApplicationApiSelectedCopyWith(_$_ApplicationApiSelected value,
-          $Res Function(_$_ApplicationApiSelected) then) =
-      __$$_ApplicationApiSelectedCopyWithImpl<$Res>;
+abstract class _$$_ApplicationTabSelectedCopyWith<$Res> {
+  factory _$$_ApplicationTabSelectedCopyWith(_$_ApplicationTabSelected value,
+          $Res Function(_$_ApplicationTabSelected) then) =
+      __$$_ApplicationTabSelectedCopyWithImpl<$Res>;
   @useResult
-  $Res call({ApiDoc doc});
+  $Res call({int tab});
 }
 
 /// @nodoc
-class __$$_ApplicationApiSelectedCopyWithImpl<$Res>
-    extends _$ApplicationEventCopyWithImpl<$Res, _$_ApplicationApiSelected>
-    implements _$$_ApplicationApiSelectedCopyWith<$Res> {
-  __$$_ApplicationApiSelectedCopyWithImpl(_$_ApplicationApiSelected _value,
-      $Res Function(_$_ApplicationApiSelected) _then)
+class __$$_ApplicationTabSelectedCopyWithImpl<$Res>
+    extends _$ApplicationEventCopyWithImpl<$Res, _$_ApplicationTabSelected>
+    implements _$$_ApplicationTabSelectedCopyWith<$Res> {
+  __$$_ApplicationTabSelectedCopyWithImpl(_$_ApplicationTabSelected _value,
+      $Res Function(_$_ApplicationTabSelected) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? doc = null,
+    Object? tab = null,
   }) {
-    return _then(_$_ApplicationApiSelected(
-      null == doc
-          ? _value.doc
-          : doc // ignore: cast_nullable_to_non_nullable
-              as ApiDoc,
+    return _then(_$_ApplicationTabSelected(
+      null == tab
+          ? _value.tab
+          : tab // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_ApplicationApiSelected implements _ApplicationApiSelected {
-  const _$_ApplicationApiSelected(this.doc);
+class _$_ApplicationTabSelected implements _ApplicationTabSelected {
+  const _$_ApplicationTabSelected(this.tab);
 
   @override
-  final ApiDoc doc;
+  final int tab;
 
   @override
   String toString() {
-    return 'ApplicationEvent.apiSelected(doc: $doc)';
+    return 'ApplicationEvent.tabSelected(tab: $tab)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ApplicationApiSelected &&
-            (identical(other.doc, doc) || other.doc == doc));
+            other is _$_ApplicationTabSelected &&
+            (identical(other.tab, tab) || other.tab == tab));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, doc);
+  int get hashCode => Object.hash(runtimeType, tab);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ApplicationApiSelectedCopyWith<_$_ApplicationApiSelected> get copyWith =>
-      __$$_ApplicationApiSelectedCopyWithImpl<_$_ApplicationApiSelected>(
+  _$$_ApplicationTabSelectedCopyWith<_$_ApplicationTabSelected> get copyWith =>
+      __$$_ApplicationTabSelectedCopyWithImpl<_$_ApplicationTabSelected>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool showAsManyPages) navigationBehaviorChanged,
     required TResult Function(bool shouldDrawerBeVisible)
         drawerVisibilityChanged,
-    required TResult Function(ApiDoc doc) apiSelected,
+    required TResult Function(int tab) tabSelected,
     required TResult Function() goHome,
   }) {
-    return apiSelected(doc);
+    return tabSelected(tab);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(bool showAsManyPages)? navigationBehaviorChanged,
     TResult? Function(bool shouldDrawerBeVisible)? drawerVisibilityChanged,
-    TResult? Function(ApiDoc doc)? apiSelected,
+    TResult? Function(int tab)? tabSelected,
     TResult? Function()? goHome,
   }) {
-    return apiSelected?.call(doc);
+    return tabSelected?.call(tab);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool showAsManyPages)? navigationBehaviorChanged,
     TResult Function(bool shouldDrawerBeVisible)? drawerVisibilityChanged,
-    TResult Function(ApiDoc doc)? apiSelected,
+    TResult Function(int tab)? tabSelected,
     TResult Function()? goHome,
     required TResult orElse(),
   }) {
-    if (apiSelected != null) {
-      return apiSelected(doc);
+    if (tabSelected != null) {
+      return tabSelected(tab);
     }
     return orElse();
   }
@@ -668,56 +470,50 @@ class _$_ApplicationApiSelected implements _ApplicationApiSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ApplicationStarted value) started,
-    required TResult Function(_ApplicationNavigationBehaviorChanged value)
-        navigationBehaviorChanged,
     required TResult Function(_ApplicationDrawerVisibilityChanged value)
         drawerVisibilityChanged,
-    required TResult Function(_ApplicationApiSelected value) apiSelected,
+    required TResult Function(_ApplicationTabSelected value) tabSelected,
     required TResult Function(_ApplicationGoHome value) goHome,
   }) {
-    return apiSelected(this);
+    return tabSelected(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ApplicationStarted value)? started,
-    TResult? Function(_ApplicationNavigationBehaviorChanged value)?
-        navigationBehaviorChanged,
     TResult? Function(_ApplicationDrawerVisibilityChanged value)?
         drawerVisibilityChanged,
-    TResult? Function(_ApplicationApiSelected value)? apiSelected,
+    TResult? Function(_ApplicationTabSelected value)? tabSelected,
     TResult? Function(_ApplicationGoHome value)? goHome,
   }) {
-    return apiSelected?.call(this);
+    return tabSelected?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ApplicationStarted value)? started,
-    TResult Function(_ApplicationNavigationBehaviorChanged value)?
-        navigationBehaviorChanged,
     TResult Function(_ApplicationDrawerVisibilityChanged value)?
         drawerVisibilityChanged,
-    TResult Function(_ApplicationApiSelected value)? apiSelected,
+    TResult Function(_ApplicationTabSelected value)? tabSelected,
     TResult Function(_ApplicationGoHome value)? goHome,
     required TResult orElse(),
   }) {
-    if (apiSelected != null) {
-      return apiSelected(this);
+    if (tabSelected != null) {
+      return tabSelected(this);
     }
     return orElse();
   }
 }
 
-abstract class _ApplicationApiSelected implements ApplicationEvent {
-  const factory _ApplicationApiSelected(final ApiDoc doc) =
-      _$_ApplicationApiSelected;
+abstract class _ApplicationTabSelected implements ApplicationEvent {
+  const factory _ApplicationTabSelected(final int tab) =
+      _$_ApplicationTabSelected;
 
-  ApiDoc get doc;
+  int get tab;
   @JsonKey(ignore: true)
-  _$$_ApplicationApiSelectedCopyWith<_$_ApplicationApiSelected> get copyWith =>
+  _$$_ApplicationTabSelectedCopyWith<_$_ApplicationTabSelected> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -760,10 +556,9 @@ class _$_ApplicationGoHome implements _ApplicationGoHome {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool showAsManyPages) navigationBehaviorChanged,
     required TResult Function(bool shouldDrawerBeVisible)
         drawerVisibilityChanged,
-    required TResult Function(ApiDoc doc) apiSelected,
+    required TResult Function(int tab) tabSelected,
     required TResult Function() goHome,
   }) {
     return goHome();
@@ -773,9 +568,8 @@ class _$_ApplicationGoHome implements _ApplicationGoHome {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(bool showAsManyPages)? navigationBehaviorChanged,
     TResult? Function(bool shouldDrawerBeVisible)? drawerVisibilityChanged,
-    TResult? Function(ApiDoc doc)? apiSelected,
+    TResult? Function(int tab)? tabSelected,
     TResult? Function()? goHome,
   }) {
     return goHome?.call();
@@ -785,9 +579,8 @@ class _$_ApplicationGoHome implements _ApplicationGoHome {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool showAsManyPages)? navigationBehaviorChanged,
     TResult Function(bool shouldDrawerBeVisible)? drawerVisibilityChanged,
-    TResult Function(ApiDoc doc)? apiSelected,
+    TResult Function(int tab)? tabSelected,
     TResult Function()? goHome,
     required TResult orElse(),
   }) {
@@ -801,11 +594,9 @@ class _$_ApplicationGoHome implements _ApplicationGoHome {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ApplicationStarted value) started,
-    required TResult Function(_ApplicationNavigationBehaviorChanged value)
-        navigationBehaviorChanged,
     required TResult Function(_ApplicationDrawerVisibilityChanged value)
         drawerVisibilityChanged,
-    required TResult Function(_ApplicationApiSelected value) apiSelected,
+    required TResult Function(_ApplicationTabSelected value) tabSelected,
     required TResult Function(_ApplicationGoHome value) goHome,
   }) {
     return goHome(this);
@@ -815,11 +606,9 @@ class _$_ApplicationGoHome implements _ApplicationGoHome {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ApplicationStarted value)? started,
-    TResult? Function(_ApplicationNavigationBehaviorChanged value)?
-        navigationBehaviorChanged,
     TResult? Function(_ApplicationDrawerVisibilityChanged value)?
         drawerVisibilityChanged,
-    TResult? Function(_ApplicationApiSelected value)? apiSelected,
+    TResult? Function(_ApplicationTabSelected value)? tabSelected,
     TResult? Function(_ApplicationGoHome value)? goHome,
   }) {
     return goHome?.call(this);
@@ -829,11 +618,9 @@ class _$_ApplicationGoHome implements _ApplicationGoHome {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ApplicationStarted value)? started,
-    TResult Function(_ApplicationNavigationBehaviorChanged value)?
-        navigationBehaviorChanged,
     TResult Function(_ApplicationDrawerVisibilityChanged value)?
         drawerVisibilityChanged,
-    TResult Function(_ApplicationApiSelected value)? apiSelected,
+    TResult Function(_ApplicationTabSelected value)? tabSelected,
     TResult Function(_ApplicationGoHome value)? goHome,
     required TResult orElse(),
   }) {
@@ -856,12 +643,9 @@ ApplicationState _$ApplicationStateFromJson(Map<String, dynamic> json) {
 mixin _$ApplicationState {
   ApplicationStatus get status => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  NavigationBehavior get navigationBehavior =>
-      throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
   bool get isDrawerVisible => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  ApiDoc? get apiDoc => throw _privateConstructorUsedError;
+  dynamic get selectedTab => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   bool get show404 => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -881,9 +665,8 @@ abstract class $ApplicationStateCopyWith<$Res> {
   @useResult
   $Res call(
       {ApplicationStatus status,
-      @JsonKey(ignore: true) NavigationBehavior navigationBehavior,
       @JsonKey(ignore: true) bool isDrawerVisible,
-      @JsonKey(ignore: true) ApiDoc? apiDoc,
+      @JsonKey(ignore: true) dynamic selectedTab,
       @JsonKey(ignore: true) bool show404,
       @JsonKey(ignore: true) Failure? failure});
 }
@@ -902,9 +685,8 @@ class _$ApplicationStateCopyWithImpl<$Res, $Val extends ApplicationState>
   @override
   $Res call({
     Object? status = null,
-    Object? navigationBehavior = null,
     Object? isDrawerVisible = null,
-    Object? apiDoc = freezed,
+    Object? selectedTab = freezed,
     Object? show404 = null,
     Object? failure = freezed,
   }) {
@@ -913,18 +695,14 @@ class _$ApplicationStateCopyWithImpl<$Res, $Val extends ApplicationState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ApplicationStatus,
-      navigationBehavior: null == navigationBehavior
-          ? _value.navigationBehavior
-          : navigationBehavior // ignore: cast_nullable_to_non_nullable
-              as NavigationBehavior,
       isDrawerVisible: null == isDrawerVisible
           ? _value.isDrawerVisible
           : isDrawerVisible // ignore: cast_nullable_to_non_nullable
               as bool,
-      apiDoc: freezed == apiDoc
-          ? _value.apiDoc
-          : apiDoc // ignore: cast_nullable_to_non_nullable
-              as ApiDoc?,
+      selectedTab: freezed == selectedTab
+          ? _value.selectedTab
+          : selectedTab // ignore: cast_nullable_to_non_nullable
+              as dynamic,
       show404: null == show404
           ? _value.show404
           : show404 // ignore: cast_nullable_to_non_nullable
@@ -947,9 +725,8 @@ abstract class _$$_ApplicationStateCopyWith<$Res>
   @useResult
   $Res call(
       {ApplicationStatus status,
-      @JsonKey(ignore: true) NavigationBehavior navigationBehavior,
       @JsonKey(ignore: true) bool isDrawerVisible,
-      @JsonKey(ignore: true) ApiDoc? apiDoc,
+      @JsonKey(ignore: true) dynamic selectedTab,
       @JsonKey(ignore: true) bool show404,
       @JsonKey(ignore: true) Failure? failure});
 }
@@ -966,9 +743,8 @@ class __$$_ApplicationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
-    Object? navigationBehavior = null,
     Object? isDrawerVisible = null,
-    Object? apiDoc = freezed,
+    Object? selectedTab = freezed,
     Object? show404 = null,
     Object? failure = freezed,
   }) {
@@ -977,18 +753,11 @@ class __$$_ApplicationStateCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as ApplicationStatus,
-      navigationBehavior: null == navigationBehavior
-          ? _value.navigationBehavior
-          : navigationBehavior // ignore: cast_nullable_to_non_nullable
-              as NavigationBehavior,
       isDrawerVisible: null == isDrawerVisible
           ? _value.isDrawerVisible
           : isDrawerVisible // ignore: cast_nullable_to_non_nullable
               as bool,
-      apiDoc: freezed == apiDoc
-          ? _value.apiDoc
-          : apiDoc // ignore: cast_nullable_to_non_nullable
-              as ApiDoc?,
+      selectedTab: freezed == selectedTab ? _value.selectedTab! : selectedTab,
       show404: null == show404
           ? _value.show404
           : show404 // ignore: cast_nullable_to_non_nullable
@@ -1006,16 +775,10 @@ class __$$_ApplicationStateCopyWithImpl<$Res>
 class _$_ApplicationState implements _ApplicationState {
   const _$_ApplicationState(
       {this.status = ApplicationStatus.loading,
-      @JsonKey(ignore: true)
-          this.navigationBehavior = NavigationBehavior.onePage,
-      @JsonKey(ignore: true)
-          this.isDrawerVisible = true,
-      @JsonKey(ignore: true)
-          this.apiDoc,
-      @JsonKey(ignore: true)
-          this.show404 = false,
-      @JsonKey(ignore: true)
-          this.failure});
+      @JsonKey(ignore: true) this.isDrawerVisible = true,
+      @JsonKey(ignore: true) this.selectedTab = 0,
+      @JsonKey(ignore: true) this.show404 = false,
+      @JsonKey(ignore: true) this.failure});
 
   factory _$_ApplicationState.fromJson(Map<String, dynamic> json) =>
       _$$_ApplicationStateFromJson(json);
@@ -1025,13 +788,10 @@ class _$_ApplicationState implements _ApplicationState {
   final ApplicationStatus status;
   @override
   @JsonKey(ignore: true)
-  final NavigationBehavior navigationBehavior;
-  @override
-  @JsonKey(ignore: true)
   final bool isDrawerVisible;
   @override
   @JsonKey(ignore: true)
-  final ApiDoc? apiDoc;
+  final dynamic selectedTab;
   @override
   @JsonKey(ignore: true)
   final bool show404;
@@ -1041,7 +801,7 @@ class _$_ApplicationState implements _ApplicationState {
 
   @override
   String toString() {
-    return 'ApplicationState(status: $status, navigationBehavior: $navigationBehavior, isDrawerVisible: $isDrawerVisible, apiDoc: $apiDoc, show404: $show404, failure: $failure)';
+    return 'ApplicationState(status: $status, isDrawerVisible: $isDrawerVisible, selectedTab: $selectedTab, show404: $show404, failure: $failure)';
   }
 
   @override
@@ -1050,19 +810,18 @@ class _$_ApplicationState implements _ApplicationState {
         (other.runtimeType == runtimeType &&
             other is _$_ApplicationState &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.navigationBehavior, navigationBehavior) ||
-                other.navigationBehavior == navigationBehavior) &&
             (identical(other.isDrawerVisible, isDrawerVisible) ||
                 other.isDrawerVisible == isDrawerVisible) &&
-            (identical(other.apiDoc, apiDoc) || other.apiDoc == apiDoc) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedTab, selectedTab) &&
             (identical(other.show404, show404) || other.show404 == show404) &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, status, navigationBehavior,
-      isDrawerVisible, apiDoc, show404, failure);
+  int get hashCode => Object.hash(runtimeType, status, isDrawerVisible,
+      const DeepCollectionEquality().hash(selectedTab), show404, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -1081,9 +840,8 @@ class _$_ApplicationState implements _ApplicationState {
 abstract class _ApplicationState implements ApplicationState {
   const factory _ApplicationState(
       {final ApplicationStatus status,
-      @JsonKey(ignore: true) final NavigationBehavior navigationBehavior,
       @JsonKey(ignore: true) final bool isDrawerVisible,
-      @JsonKey(ignore: true) final ApiDoc? apiDoc,
+      @JsonKey(ignore: true) final dynamic selectedTab,
       @JsonKey(ignore: true) final bool show404,
       @JsonKey(ignore: true) final Failure? failure}) = _$_ApplicationState;
 
@@ -1094,13 +852,10 @@ abstract class _ApplicationState implements ApplicationState {
   ApplicationStatus get status;
   @override
   @JsonKey(ignore: true)
-  NavigationBehavior get navigationBehavior;
-  @override
-  @JsonKey(ignore: true)
   bool get isDrawerVisible;
   @override
   @JsonKey(ignore: true)
-  ApiDoc? get apiDoc;
+  dynamic get selectedTab;
   @override
   @JsonKey(ignore: true)
   bool get show404;

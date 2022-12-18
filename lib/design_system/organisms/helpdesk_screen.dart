@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-class HelpdeskPage extends StatelessWidget {
-  const HelpdeskPage({
+class HelpdeskScreen extends StatelessWidget {
+  const HelpdeskScreen({
     super.key,
     this.appBarTitle,
     this.navigation,
@@ -25,7 +25,7 @@ class HelpdeskPage extends StatelessWidget {
   final List<ContextMenuItem>? actionMenuItems;
   final MenuItemVoidCallback? actionMenuCallback;
 
-  HelpdeskPage.loading({
+  HelpdeskScreen.loading({
     super.key,
     this.automaticallyShowBackButton = true,
     String? message,
@@ -37,7 +37,7 @@ class HelpdeskPage extends StatelessWidget {
           message: message,
         );
 
-  HelpdeskPage.error({
+  HelpdeskScreen.error({
     super.key,
     this.automaticallyShowBackButton = true,
     IconData? icon,

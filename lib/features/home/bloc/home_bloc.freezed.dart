@@ -548,7 +548,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @override
   $Res call({
     Object? status = null,
-    Object? navigationBehavior = null,
+    Object? navigationBehavior = freezed,
     Object? isDrawerVisible = null,
   }) {
     return _then(_value.copyWith(
@@ -556,7 +556,7 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as HomeStatus,
-      navigationBehavior: null == navigationBehavior
+      navigationBehavior: freezed == navigationBehavior
           ? _value.navigationBehavior
           : navigationBehavior // ignore: cast_nullable_to_non_nullable
               as NavigationBehavior,
@@ -593,7 +593,7 @@ class __$$_HomeStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
-    Object? navigationBehavior = null,
+    Object? navigationBehavior = freezed,
     Object? isDrawerVisible = null,
   }) {
     return _then(_$_HomeState(
@@ -601,7 +601,7 @@ class __$$_HomeStateCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as HomeStatus,
-      navigationBehavior: null == navigationBehavior
+      navigationBehavior: freezed == navigationBehavior
           ? _value.navigationBehavior
           : navigationBehavior // ignore: cast_nullable_to_non_nullable
               as NavigationBehavior,
@@ -647,16 +647,16 @@ class _$_HomeState implements _HomeState {
         (other.runtimeType == runtimeType &&
             other is _$_HomeState &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.navigationBehavior, navigationBehavior) ||
-                other.navigationBehavior == navigationBehavior) &&
+            const DeepCollectionEquality()
+                .equals(other.navigationBehavior, navigationBehavior) &&
             (identical(other.isDrawerVisible, isDrawerVisible) ||
                 other.isDrawerVisible == isDrawerVisible));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, status, navigationBehavior, isDrawerVisible);
+  int get hashCode => Object.hash(runtimeType, status,
+      const DeepCollectionEquality().hash(navigationBehavior), isDrawerVisible);
 
   @JsonKey(ignore: true)
   @override

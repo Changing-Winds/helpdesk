@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HelpdeskScreen {
-  const HelpdeskScreen({
+class HelpdeskTab {
+  const HelpdeskTab({
     required this.title,
     required this.icon,
     required this.screen,

@@ -59,6 +59,13 @@ class _CreateTicketViewState extends State<CreateTicketView> {
       },
       builder: (context, state) {
         return Scaffold(
+          backgroundColor: Theme.of(context).colorScheme.surface,
+          appBar: AppBar(
+            automaticallyImplyLeading: false,
+            actions: const [
+              CloseButton(),
+            ],
+          ),
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

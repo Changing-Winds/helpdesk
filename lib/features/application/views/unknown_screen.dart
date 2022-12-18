@@ -6,7 +6,7 @@ class UnknownScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HelpdeskPage.error(
+    return HelpdeskScreen.error(
       errorTitle: 'Unknown Page',
       errorExplanation: '404: Not Found',
     );

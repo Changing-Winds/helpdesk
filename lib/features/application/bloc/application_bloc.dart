@@ -13,9 +13,8 @@ part 'application_state.dart';
 class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
   ApplicationBloc(this.config) : super(const ApplicationState()) {
     on<_ApplicationStarted>(_onStarted);
-    on<_ApplicationNavigationBehaviorChanged>(_onNavigationBehaviorChanged);
     on<_ApplicationDrawerVisibilityChanged>(_onDrawerVisibilityChanged);
-    on<_ApplicationApiSelected>(_onApiSelected);
+    on<_ApplicationTabSelected>(_onTabSelected);
     on<_ApplicationGoHome>(_onGoHome);
   }
 
@@ -25,18 +24,7 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
       event, Emitter<ApplicationState> emit) async {
     emit(state.copyWith(
       status: ApplicationStatus.ready,
-    ));
-  }
-
-  FutureOr<void> _onNavigationBehaviorChanged(
-      _ApplicationNavigationBehaviorChanged event,
-      Emitter<ApplicationState> emit) {
-    emit(state.copyWith(
-      status: ApplicationStatus.ready,
-      navigationBehavior: event.showAsManyPages
-          ? NavigationBehavior.manyPages
-          : NavigationBehavior.onePage,
-      isDrawerVisible: state.isDrawerVisible,
+      selectedTab: state.selectedTab,
     ));
   }
 
@@ -45,26 +33,25 @@ class ApplicationBloc extends Bloc<ApplicationEvent, ApplicationState> {
       Emitter<ApplicationState> emit) {
     emit(state.copyWith(
       status: ApplicationStatus.ready,
-      navigationBehavior: state.navigationBehavior,
+      selectedTab: state.selectedTab,
       isDrawerVisible: event.shouldDrawerBeVisible,
     ));
   }
 
-  FutureOr<void> _onApiSelected(event, Emitter<ApplicationState> emit) {
+  FutureOr<void> _onTabSelected(
+      _ApplicationTabSelected event, Emitter<ApplicationState> emit) {
     emit(state.copyWith(
       status: ApplicationStatus.ready,
-      navigationBehavior: state.navigationBehavior,
+      selectedTab: event.tab,
       isDrawerVisible: state.isDrawerVisible,
-      apiDoc: event.doc,
     ));
   }
 
   FutureOr<void> _onGoHome(event, Emitter<ApplicationState> emit) {
     emit(state.copyWith(
       status: ApplicationStatus.ready,
-      navigationBehavior: state.navigationBehavior,
+      selectedTab: state.selectedTab,
       isDrawerVisible: state.isDrawerVisible,
-      apiDoc: null,
       show404: false,
     ));
   }

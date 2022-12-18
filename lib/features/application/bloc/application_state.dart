@@ -16,11 +16,8 @@ enum ApplicationStatus {
 class ApplicationState with _$ApplicationState {
   const factory ApplicationState({
     @Default(ApplicationStatus.loading) ApplicationStatus status,
-    @JsonKey(ignore: true)
-    @Default(NavigationBehavior.onePage)
-        NavigationBehavior navigationBehavior,
     @JsonKey(ignore: true) @Default(true) bool isDrawerVisible,
-    @JsonKey(ignore: true) ApiDoc? apiDoc,
+    @JsonKey(ignore: true) @Default(0) selectedTab,
     @JsonKey(ignore: true) @Default(false) bool show404,
     @JsonKey(ignore: true) Failure? failure,
   }) = _ApplicationState;

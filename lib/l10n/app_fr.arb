@@ -2,6 +2,16 @@
   "affectedProduct": "Produit affecté",
   "allOpenedTickets": "Tous les tickets ouverts",
   "application": "Application",
+  "authenticationChecking": "Vérification de l'authentification...",
+  "authenticationUnauthenticatedErrorTitle": "Impossible de vous identifier",
+  "authenticationUnauthenticatedErrorExplanation": "Assurez-vous que votre navigateur ne bloque pas les popups.\n Cette application est uniquement accessible aux utlisateurs disposant d'une adresse email du domaine {domain}.",
+  "@authenticationUnauthenticatedErrorExplanation": {
+    "description": "Loading message when checking authentication status",
+    "type": "text",
+    "placeholders": {
+      "domain": {}
+    }
+  },
   "dashboard": "Tableau de bord",
   "device": "Appareil",
   "deviceSystem": "Système",

@@ -25,7 +25,9 @@ class LoadingView extends StatelessWidget {
               child: Text(
                 message!,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headlineMedium,
+                style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                    height:
+                        1.2), // Reducing the space between lines for better legibility
               ),
             ),
         ],

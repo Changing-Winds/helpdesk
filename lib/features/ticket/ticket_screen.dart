@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:helpdesk/design_system/organisms/helpdesk_page.dart';
+import 'package:helpdesk/design_system/organisms/helpdesk_screen.dart';
 import 'package:helpdesk/features/ticket/bloc/ticket_bloc.dart';
 import 'package:helpdesk/features/application/bloc/application_bloc.dart';
 import 'package:helpdesk/features/authentication/authentication.dart';
@@ -52,7 +52,7 @@ class _TicketScreenState extends State<TicketScreen> {
     route?.animation?.addStatusListener(handler);
 
     return isTransitioning != null && isTransitioning!
-        ? HelpdeskPage.loading()
+        ? HelpdeskScreen.loading()
         : BlocProvider<TicketBloc>(
             lazy: false,
             create: (_) => TicketBloc(
