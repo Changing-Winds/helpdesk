@@ -39,9 +39,9 @@ class ErrorView extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               width: 400.0,
               child: Text(
-                'Reason: $errorExplanation',
+                errorExplanation!,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
             )
         ],

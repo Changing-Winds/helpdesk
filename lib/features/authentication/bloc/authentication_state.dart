@@ -38,6 +38,6 @@ class AuthenticationUnauthenticated extends AuthenticationState {
       : super(status: AuthenticationStatus.unauthenticated);
 }
 
-class AuthenticationFaiilure extends AuthenticationState {
-  const AuthenticationFaiilure() : super(status: AuthenticationStatus.failure);
+class AuthenticationFailure extends AuthenticationState {
+  const AuthenticationFailure() : super(status: AuthenticationStatus.failure);
 }
