@@ -1,0 +1,8 @@
+# Design
+helpdesk-name: Example Help Desk # defaults to 'Help Desk'
+helpdesk-logo: images/logo.png # defaults to a cloud icon
+center-helpdesk-name: false # defaults to false
+# Behaviors
+# Params
+google-clientId: xxxxxxxx.apps.googleusercontent.com
+google-hosted-domain: example.com
