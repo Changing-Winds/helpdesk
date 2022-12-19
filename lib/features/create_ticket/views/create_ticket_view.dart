@@ -2,7 +2,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:helpdesk/design_system/atoms/wizard_progress_indicator.dart';
-import 'package:helpdesk/design_system/constants.dart';
 import 'package:helpdesk/features/create_ticket/bloc/create_ticket_bloc.dart';
 import 'package:helpdesk/features/create_ticket/views/wizard/details_view.dart';
 import 'package:helpdesk/features/create_ticket/views/wizard/done_view.dart';
@@ -65,17 +64,22 @@ class _CreateTicketViewState extends State<CreateTicketView> {
             actions: const [
               CloseButton(),
             ],
+            centerTitle: false,
+            title: Text(
+              L10nString.of(context).newTicket,
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
           ),
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: kPadding),
-                child: Text(
-                  L10nString.of(context).newTicket,
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.only(left: kPadding),
+              //   child: Text(
+              //     L10nString.of(context).newTicket,
+              //     style: Theme.of(context).textTheme.headlineMedium,
+              //   ),
+              // ),
               WizardProgressionIndicator(
                 totalSteps: totalSteps,
                 currentStep: currentStep,

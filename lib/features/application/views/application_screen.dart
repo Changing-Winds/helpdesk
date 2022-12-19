@@ -8,7 +8,7 @@ import 'package:helpdesk/features/authentication/widgets/user_connection_status.
 import 'package:helpdesk/features/create_ticket/views/create_ticket_screen.dart';
 import 'package:helpdesk/features/dashboard/views/dashboard_screen.dart';
 import 'package:helpdesk/features/tickets/views/tickets_screen.dart';
-import 'package:helpdesk/features/your_tickets/views/your_tickets_screen.dart';
+import 'package:helpdesk/features/tickets/views/your_tickets_screen.dart';
 import 'package:helpdesk/models/models.dart';
 import 'package:helpdesk/utils/config.dart';
 import 'package:flutter/foundation.dart';
@@ -42,32 +42,34 @@ class ApplicationScreen extends StatelessWidget {
     ];
 
     Widget openNewTicketScreen() {
-      return OpenContainer(
-          transitionDuration: const Duration(milliseconds: 350),
-          useRootNavigator: true,
-          closedColor: Colors.transparent,
-          openColor: Theme.of(context).scaffoldBackgroundColor,
-          middleColor: Colors.transparent,
-          closedElevation: 0.0,
-          openElevation: 0.0,
-          closedBuilder: (context, openContainer) {
-            return FloatingActionButton(
-              heroTag: '_FAB',
-              backgroundColor: Theme.of(context).primaryColor,
-              foregroundColor: Colors.white,
-              elevation: 8.0,
-              onPressed: () {
-                HapticFeedback.mediumImpact();
-                openContainer();
+      return !isLargeScreen
+          ? OpenContainer(
+              transitionDuration: const Duration(milliseconds: 350),
+              useRootNavigator: true,
+              closedColor: Colors.transparent,
+              openColor: Theme.of(context).scaffoldBackgroundColor,
+              middleColor: Colors.transparent,
+              closedElevation: 0.0,
+              openElevation: 0.0,
+              closedBuilder: (context, openContainer) {
+                return FloatingActionButton(
+                  heroTag: '_FAB',
+                  backgroundColor: Theme.of(context).primaryColor,
+                  foregroundColor: Colors.white,
+                  elevation: 8.0,
+                  onPressed: () {
+                    HapticFeedback.mediumImpact();
+                    openContainer();
+                  },
+                  child: const Center(
+                    child: Icon(Icons.add, size: 30.0),
+                  ),
+                );
               },
-              child: const Center(
-                child: Icon(Icons.add, size: 30.0),
-              ),
-            );
-          },
-          openBuilder: (context, closedContainer) {
-            return const CreateTicketScreen();
-          });
+              openBuilder: (context, closedContainer) {
+                return const CreateTicketScreen();
+              })
+          : Container();
     }
 
     return BlocBuilder<AuthenticationBloc, AuthenticationState>(
@@ -172,30 +174,27 @@ class ApplicationScreen extends StatelessWidget {
                                                 onPressed: () {
                                                   Navigator.of(context).push(
                                                     PageRouteBuilder(
-                                                        opaque: false,
-                                                        pageBuilder:
-                                                            (BuildContext
-                                                                        context,
-                                                                    _,
-                                                                    __) =>
-                                                                Container(
-                                                                  color: Theme.of(
-                                                                          context)
-                                                                      .colorScheme
-                                                                      .background
-                                                                      .withOpacity(
-                                                                          0.8),
-                                                                  child: const FractionallySizedBox(
-                                                                      widthFactor:
-                                                                          0.5,
-                                                                      heightFactor:
-                                                                          0.8,
-                                                                      alignment:
-                                                                          FractionalOffset
-                                                                              .topCenter,
-                                                                      child:
-                                                                          CreateTicketScreen()),
-                                                                )),
+                                                      opaque: false,
+                                                      pageBuilder:
+                                                          (BuildContext context,
+                                                                  _, __) =>
+                                                              Container(
+                                                        color: Theme.of(context)
+                                                            .colorScheme
+                                                            .surface
+                                                            .withOpacity(0.8),
+                                                        child: const FractionallySizedBox(
+                                                            widthFactor: 0.5,
+                                                            heightFactor: 0.8,
+                                                            alignment:
+                                                                FractionalOffset
+                                                                    .topCenter,
+                                                            child: Material(
+                                                                elevation: 10.0,
+                                                                child:
+                                                                    CreateTicketScreen())),
+                                                      ),
+                                                    ),
                                                   );
                                                 },
                                                 icon: const Icon(

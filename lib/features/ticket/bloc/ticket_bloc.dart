@@ -44,41 +44,10 @@ class TicketBloc extends Bloc<TicketEvent, TicketState> {
       // String url =
       //     apiConfig.apis.firstWhere((element) => element.slug == apiSlug).url;
 
-      Either<Failure, Ticket> result =
-          Right(Ticket(id: 'blank', title: 'empty Ticket'));
-
-      // await OpenApi().parse(
-      //   url: config.apiSpecsLocation + url,
-      //   usesDomain: apiConfig.usesDomain,
-      //   domainUrl: config.apiSpecsLocation + (apiConfig.domain ?? ''),
-      // );
-
-      // if (result.isLeft()) {
-      //   emit(state.copyWith(
-      //     status: TicketStatus.failure,
-      //     ticket: state.ticket,
-      //     failure: result.asLeft(),
-      //   ));
-      //   return;
-      // }
+      Either<Failure, Ticket> result = Right(
+          Ticket(id: 'blank', title: 'empty Ticket', owner: 'Unkown Onwer'));
 
       Ticket ticket = result.asRight();
-
-      // // Let's show the correct method if we are dealing
-      // // with a direct anchor or a deep linkk
-      // if (tagSlug != null && methodSlug != null) {
-      //   Tag? tag = navigation.firstWhere(
-      //       (element) => element is Tag && element.slug == tagSlug,
-      //       orElse: () => null);
-
-      //   if (tag == null) return;
-      //   Method? method = tag.methods.firstWhere(
-      //       (element) => element.slug == methodSlug,
-      //       orElse: () => tag.methods.first);
-
-      //   currentElement = method;
-
-      // }
 
       emit(state.copyWith(
         status: TicketStatus.ready,

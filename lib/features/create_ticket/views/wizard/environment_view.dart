@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:helpdesk/design_system/design_system.dart';
 import 'package:helpdesk/features/create_ticket/bloc/create_ticket_bloc.dart';
 import 'package:helpdesk/repositories/issue_repository/models/device.dart';
-import 'package:helpdesk/repositories/issue_repository/models/product.dart';
 
 class EnvironmentWizardView extends StatelessWidget {
   const EnvironmentWizardView({

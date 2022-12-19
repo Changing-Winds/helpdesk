@@ -1,5 +1,5 @@
-import 'package:helpdesk/models/models.dart';
 import 'package:flutter/material.dart';
+import 'package:helpdesk/repositories/ticket_repository/models/ticket.dart';
 
 class StatusChip extends StatelessWidget {
   const StatusChip({

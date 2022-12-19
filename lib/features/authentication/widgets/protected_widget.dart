@@ -23,10 +23,7 @@ class ProtectedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Config config = BlocProvider.of<ApplicationBloc>(context).config;
-    return BlocConsumer<AuthenticationBloc, AuthenticationState>(
-      listener: (context, state) {
-        // TODO: implement listener
-      },
+    return BlocBuilder<AuthenticationBloc, AuthenticationState>(
       builder: (context, state) {
         switch (state.status) {
           case AuthenticationStatus.authenticated:

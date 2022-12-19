@@ -6,7 +6,6 @@ import 'package:helpdesk/features/authentication/widgets/user_connection_status.
 import 'package:helpdesk/utils/config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 class HelpdeskScreen extends StatelessWidget {
   const HelpdeskScreen({
